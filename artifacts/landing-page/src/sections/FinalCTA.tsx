@@ -4,13 +4,9 @@ export default function FinalCTA() {
       position: "relative",
       padding: "7rem 2rem",
       overflow: "hidden",
-      background: "hsl(222, 28%, 10%)",
+      background: "#0e2235",
     }}>
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        overflow: "hidden",
-      }}>
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <img
           src="images/cta.jpeg"
           alt="Empieza tu aprendizaje"
@@ -19,14 +15,14 @@ export default function FinalCTA() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center",
-            opacity: 0.2,
+            opacity: 0.18,
           }}
           onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(135deg, rgba(15,19,30,0.96) 0%, rgba(22,28,46,0.92) 100%)",
+          background: "linear-gradient(135deg, rgba(11,28,44,0.97) 0%, rgba(14,34,53,0.93) 100%)",
         }} />
       </div>
 
@@ -39,7 +35,7 @@ export default function FinalCTA() {
         <div style={{
           width: "3rem",
           height: "3px",
-          background: "hsl(38, 92%, 58%)",
+          background: "#2FB6FF",
           margin: "0 auto 1.5rem",
           borderRadius: "2px",
         }} />
@@ -48,7 +44,7 @@ export default function FinalCTA() {
           fontWeight: 800,
           lineHeight: 1.1,
           letterSpacing: "-0.03em",
-          color: "hsl(210, 20%, 95%)",
+          color: "#fff",
           marginBottom: "1.25rem",
         }}>
           Empieza hoy tu camino hacia el inglés
@@ -56,7 +52,7 @@ export default function FinalCTA() {
         <p style={{
           fontSize: "1.1rem",
           lineHeight: 1.7,
-          color: "hsl(210, 15%, 60%)",
+          color: "rgba(255,255,255,0.58)",
           marginBottom: "2.5rem",
           maxWidth: "520px",
           margin: "0 auto 2.5rem",

@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer style={{
-      background: "hsl(222, 32%, 6%)",
+      background: "#081625",
       padding: "2.5rem 2rem",
-      borderTop: "1px solid hsl(222, 20%, 14%)",
+      borderTop: "1px solid rgba(255,255,255,0.07)",
     }}>
       <div style={{
         maxWidth: "1200px",
@@ -14,22 +14,22 @@ export default function Footer() {
         flexWrap: "wrap",
         gap: "1rem",
       }}>
-        <div style={{ fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em", color: "hsl(210, 20%, 80%)" }}>
-          <span style={{ color: "hsl(38, 92%, 58%)" }}>English</span>Pro
+        <div style={{ fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em", color: "#fff" }}>
+          <span style={{ color: "#2FB6FF" }}>V</span>Fluent
         </div>
-        <p style={{ fontSize: "0.85rem", color: "hsl(210, 15%, 42%)" }}>
-          &copy; {new Date().getFullYear()} EnglishPro. Todos los derechos reservados.
+        <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.35)" }}>
+          &copy; {new Date().getFullYear()} VFluent. Todos los derechos reservados.
         </p>
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacidad", "Términos", "Contacto"].map(link => (
             <a key={link} href="#" style={{
-              color: "hsl(210, 15%, 42%)",
+              color: "rgba(255,255,255,0.35)",
               textDecoration: "none",
               fontSize: "0.85rem",
               transition: "color 0.2s",
             }}
-              onMouseEnter={e => (e.currentTarget.style.color = "hsl(210, 15%, 70%)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "hsl(210, 15%, 42%)")}
+              onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
             >
               {link}
             </a>

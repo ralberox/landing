@@ -7,7 +7,7 @@ const points = [
 export default function Problem() {
   return (
     <section style={{
-      background: "hsl(222, 28%, 10%)",
+      background: "#0e2235",
       padding: "6rem 2rem",
     }}>
       <div style={{
@@ -22,7 +22,7 @@ export default function Problem() {
           <div style={{
             width: "2.5rem",
             height: "3px",
-            background: "hsl(38, 92%, 58%)",
+            background: "#2FB6FF",
             marginBottom: "1.5rem",
             borderRadius: "2px",
           }} />
@@ -31,7 +31,7 @@ export default function Problem() {
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: "-0.02em",
-            color: "hsl(210, 20%, 92%)",
+            color: "#fff",
             marginBottom: "1.25rem",
           }}>
             Aprender inglés no debería sentirse confuso
@@ -39,7 +39,7 @@ export default function Problem() {
           <p style={{
             fontSize: "1.05rem",
             lineHeight: 1.75,
-            color: "hsl(210, 15%, 60%)",
+            color: "rgba(255,255,255,0.58)",
             marginBottom: "2rem",
           }}>
             Muchos estudiantes no avanzan porque no tienen claridad sobre su nivel ni una ruta definida.
@@ -53,8 +53,8 @@ export default function Problem() {
                   width: "1.5rem",
                   height: "1.5rem",
                   borderRadius: "50%",
-                  background: "rgba(251,191,36,0.12)",
-                  border: "1.5px solid hsl(38, 92%, 58%)",
+                  background: "rgba(47,182,255,0.1)",
+                  border: "1.5px solid #2FB6FF",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -64,16 +64,22 @@ export default function Problem() {
                     width: "6px",
                     height: "6px",
                     borderRadius: "50%",
-                    background: "hsl(38, 92%, 58%)",
+                    background: "#2FB6FF",
                   }} />
                 </div>
-                <span style={{ fontSize: "1rem", color: "hsl(210, 15%, 72%)", lineHeight: 1.5 }}>{point}</span>
+                <span style={{ fontSize: "1rem", color: "rgba(255,255,255,0.68)", lineHeight: 1.5 }}>{point}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div style={{ borderRadius: "0.75rem", overflow: "hidden", background: "hsl(222, 28%, 13%)", aspectRatio: "4/3" }}>
+        <div style={{
+          borderRadius: "0.75rem",
+          overflow: "hidden",
+          background: "#102233",
+          aspectRatio: "4/3",
+          border: "1px solid rgba(255,255,255,0.07)",
+        }}>
           <img
             src="images/problem.jpeg"
             alt="El problema de aprender inglés sin estructura"
@@ -86,7 +92,7 @@ export default function Problem() {
                 parent.style.display = "flex";
                 parent.style.alignItems = "center";
                 parent.style.justifyContent = "center";
-                parent.innerHTML = '<span style="color:hsl(210,15%,40%);font-size:0.9rem;">images/problem.jpeg</span>';
+                parent.innerHTML = '<span style="color:rgba(255,255,255,0.25);font-size:0.9rem;">images/problem.jpeg</span>';
               }
             }}
           />

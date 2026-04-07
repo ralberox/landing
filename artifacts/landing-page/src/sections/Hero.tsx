@@ -6,14 +6,10 @@ export default function Hero() {
       display: "flex",
       alignItems: "center",
       overflow: "hidden",
-      background: "hsl(222, 30%, 8%)",
+      background: "#0B1C2C",
       paddingTop: "68px",
     }}>
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        overflow: "hidden",
-      }}>
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <img
           src="images/herowoman.jpeg"
           alt="Hero"
@@ -22,14 +18,14 @@ export default function Hero() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center",
-            opacity: 0.35,
+            opacity: 0.32,
           }}
           onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to right, rgba(15,19,30,0.95) 40%, rgba(15,19,30,0.55) 100%)",
+          background: "linear-gradient(to right, rgba(11,28,44,0.97) 38%, rgba(11,28,44,0.5) 100%)",
         }} />
       </div>
 
@@ -43,13 +39,13 @@ export default function Hero() {
         <div style={{ maxWidth: "640px" }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(251, 191, 36, 0.12)",
-            border: "1px solid rgba(251, 191, 36, 0.3)",
+            background: "rgba(47, 182, 255, 0.12)",
+            border: "1px solid rgba(47, 182, 255, 0.3)",
             borderRadius: "2rem",
             padding: "0.35rem 1rem",
             fontSize: "0.82rem",
             fontWeight: 600,
-            color: "hsl(38, 92%, 65%)",
+            color: "#2FB6FF",
             marginBottom: "1.5rem",
             letterSpacing: "0.04em",
             textTransform: "uppercase",
@@ -62,18 +58,18 @@ export default function Hero() {
             fontWeight: 800,
             lineHeight: 1.1,
             letterSpacing: "-0.03em",
-            color: "hsl(210, 20%, 95%)",
+            color: "#fff",
             marginBottom: "1.5rem",
           }}>
             Aprende inglés con una{" "}
-            <span style={{ color: "hsl(38, 92%, 58%)" }}>ruta clara</span>{" "}
+            <span style={{ color: "#2FB6FF" }}>ruta clara</span>{" "}
             y resultados reales
           </h1>
 
           <p style={{
             fontSize: "1.15rem",
             lineHeight: 1.7,
-            color: "hsl(210, 15%, 65%)",
+            color: "rgba(255,255,255,0.6)",
             marginBottom: "2.5rem",
             maxWidth: "500px",
           }}>

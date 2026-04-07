@@ -19,21 +19,21 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" style={{
-      background: "hsl(210, 20%, 97%)",
+      background: "#F5F7FA",
       padding: "6rem 2rem",
-      color: "hsl(222, 30%, 12%)",
+      color: "#0B1C2C",
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(251, 191, 36, 0.15)",
-            border: "1px solid rgba(251, 191, 36, 0.35)",
+            background: "rgba(47, 182, 255, 0.12)",
+            border: "1px solid rgba(47, 182, 255, 0.3)",
             borderRadius: "2rem",
             padding: "0.35rem 1rem",
             fontSize: "0.82rem",
             fontWeight: 700,
-            color: "hsl(38, 75%, 38%)",
+            color: "#1490cc",
             marginBottom: "1rem",
             letterSpacing: "0.04em",
             textTransform: "uppercase",
@@ -45,7 +45,7 @@ export default function HowItWorks() {
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: "-0.02em",
-            color: "hsl(222, 30%, 12%)",
+            color: "#0B1C2C",
           }}>
             Cómo funciona
           </h2>
@@ -61,15 +61,15 @@ export default function HowItWorks() {
               background: "#fff",
               borderRadius: "0.75rem",
               overflow: "hidden",
-              boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
-              border: "1px solid rgba(0,0,0,0.06)",
+              boxShadow: "0 2px 16px rgba(11,28,44,0.08)",
+              border: "1px solid rgba(11,28,44,0.07)",
               display: "flex",
               flexDirection: "column",
             }}>
               <div style={{
                 width: "100%",
                 aspectRatio: "16/10",
-                background: "hsl(210, 15%, 92%)",
+                background: "#e8edf2",
                 overflow: "hidden",
               }}>
                 {step.media.type === "video" ? (
@@ -94,7 +94,7 @@ export default function HowItWorks() {
                         parent.style.display = "flex";
                         parent.style.alignItems = "center";
                         parent.style.justifyContent = "center";
-                        parent.innerHTML = `<span style="color:hsl(210,15%,55%);font-size:0.85rem;">${step.media.src}</span>`;
+                        parent.innerHTML = `<span style="color:#9baab8;font-size:0.85rem;">${step.media.src}</span>`;
                       }
                     }}
                   />
@@ -106,7 +106,7 @@ export default function HowItWorks() {
                   fontWeight: 700,
                   letterSpacing: "0.05em",
                   textTransform: "uppercase",
-                  color: "hsl(38, 75%, 38%)",
+                  color: "#1490cc",
                   marginBottom: "0.5rem",
                 }}>
                   Paso {i + 1}
@@ -114,14 +114,14 @@ export default function HowItWorks() {
                 <h3 style={{
                   fontSize: "1.2rem",
                   fontWeight: 700,
-                  color: "hsl(222, 30%, 14%)",
+                  color: "#0B1C2C",
                   marginBottom: "0.6rem",
                 }}>
                   {step.title}
                 </h3>
                 <p style={{
                   fontSize: "0.95rem",
-                  color: "hsl(222, 15%, 42%)",
+                  color: "#4a6070",
                   lineHeight: 1.65,
                 }}>
                   {step.description}

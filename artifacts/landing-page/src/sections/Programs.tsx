@@ -28,20 +28,20 @@ const programs = [
 export default function Programs() {
   return (
     <section id="programs" style={{
-      background: "hsl(222, 28%, 10%)",
+      background: "#0e2235",
       padding: "6rem 2rem",
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <div style={{
             display: "inline-block",
-            background: "rgba(251, 191, 36, 0.12)",
-            border: "1px solid rgba(251, 191, 36, 0.3)",
+            background: "rgba(47, 182, 255, 0.12)",
+            border: "1px solid rgba(47, 182, 255, 0.3)",
             borderRadius: "2rem",
             padding: "0.35rem 1rem",
             fontSize: "0.82rem",
             fontWeight: 700,
-            color: "hsl(38, 92%, 65%)",
+            color: "#2FB6FF",
             marginBottom: "1rem",
             letterSpacing: "0.04em",
             textTransform: "uppercase",
@@ -53,7 +53,7 @@ export default function Programs() {
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: "-0.02em",
-            color: "hsl(210, 20%, 92%)",
+            color: "#fff",
           }}>
             Elige tu programa
           </h2>
@@ -63,13 +63,14 @@ export default function Programs() {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: "1.5rem",
+          alignItems: "stretch",
         }}>
           {programs.map((program, i) => (
             <div key={i} style={{
-              background: "hsl(222, 28%, 12%)",
+              background: "#102233",
               borderRadius: "0.75rem",
               overflow: "hidden",
-              border: "1px solid hsl(222, 20%, 18%)",
+              border: "1px solid rgba(255,255,255,0.07)",
               display: "flex",
               flexDirection: "column",
               transition: "transform 0.2s, border-color 0.2s",
@@ -77,17 +78,17 @@ export default function Programs() {
             }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(251,191,36,0.3)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(47,182,255,0.35)";
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLDivElement).style.borderColor = "hsl(222, 20%, 18%)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)";
               }}
             >
               <div style={{
                 width: "100%",
                 height: "200px",
-                background: "hsl(222, 25%, 16%)",
+                background: "#0d1e2d",
                 overflow: "hidden",
                 flexShrink: 0,
               }}>
@@ -108,7 +109,7 @@ export default function Programs() {
                       parent.style.display = "flex";
                       parent.style.alignItems = "center";
                       parent.style.justifyContent = "center";
-                      parent.innerHTML = `<span style="color:hsl(210,15%,40%);font-size:0.85rem;text-align:center;padding:1rem;">${program.image}</span>`;
+                      parent.innerHTML = `<span style="color:rgba(255,255,255,0.2);font-size:0.85rem;text-align:center;padding:1rem;">${program.image}</span>`;
                     }
                   }}
                 />
@@ -116,8 +117,8 @@ export default function Programs() {
               <div style={{ padding: "1.5rem", flexGrow: 1 }}>
                 <div style={{
                   display: "inline-block",
-                  background: "rgba(251,191,36,0.1)",
-                  color: "hsl(38, 92%, 60%)",
+                  background: "rgba(47,182,255,0.1)",
+                  color: "#2FB6FF",
                   fontSize: "0.75rem",
                   fontWeight: 700,
                   letterSpacing: "0.04em",
@@ -131,14 +132,14 @@ export default function Programs() {
                 <h3 style={{
                   fontSize: "1.1rem",
                   fontWeight: 700,
-                  color: "hsl(210, 20%, 90%)",
+                  color: "#fff",
                   marginBottom: "0.6rem",
                 }}>
                   {program.title}
                 </h3>
                 <p style={{
                   fontSize: "0.9rem",
-                  color: "hsl(210, 15%, 58%)",
+                  color: "rgba(255,255,255,0.55)",
                   lineHeight: 1.65,
                 }}>
                   {program.description}

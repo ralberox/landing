@@ -6,9 +6,9 @@ export default function Navbar() {
       left: 0,
       right: 0,
       zIndex: 100,
-      background: "rgba(15, 19, 30, 0.92)",
-      backdropFilter: "blur(12px)",
-      borderBottom: "1px solid rgba(255,255,255,0.06)",
+      background: "rgba(11, 28, 44, 0.93)",
+      backdropFilter: "blur(14px)",
+      borderBottom: "1px solid rgba(255,255,255,0.07)",
       padding: "0 2rem",
     }}>
       <div style={{
@@ -19,18 +19,18 @@ export default function Navbar() {
         justifyContent: "space-between",
         height: "68px",
       }}>
-        <div style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.02em", color: "hsl(210, 20%, 92%)" }}>
-          <span style={{ color: "hsl(38, 92%, 58%)" }}>English</span>Pro
+        <div style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.02em", color: "#fff" }}>
+          <span style={{ color: "#2FB6FF" }}>V</span>Fluent
         </div>
         <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-          <a href="#how-it-works" style={{ color: "hsl(210, 15%, 65%)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "hsl(210, 20%, 92%)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "hsl(210, 15%, 65%)")}>
+          <a href="#how-it-works" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>
             Cómo funciona
           </a>
-          <a href="#programs" style={{ color: "hsl(210, 15%, 65%)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "hsl(210, 20%, 92%)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "hsl(210, 15%, 65%)")}>
+          <a href="#programs" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>
             Programas
           </a>
           <a href="#cta" className="btn-primary" style={{ padding: "0.55rem 1.4rem", fontSize: "0.9rem" }}>

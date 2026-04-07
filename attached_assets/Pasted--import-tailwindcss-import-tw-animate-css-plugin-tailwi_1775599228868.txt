@@ -74,35 +74,44 @@
   --elevate-1: rgba(255,255,255, .03);
   --elevate-2: rgba(255,255,255, .07);
 
+  /* VFluent dark navy brand palette */
   --background: 218 64% 7%;
   --foreground: 210 40% 96%;
   --border: 214 40% 18%;
   --input: 214 40% 18%;
   --ring: 188 100% 50%;
 
+  /* Primary: deep navy #0E1C36 */
   --primary: 214 62% 14%;
   --primary-foreground: 0 0% 100%;
 
+  /* Secondary: slightly lighter navy */
   --secondary: 214 50% 20%;
   --secondary-foreground: 210 40% 90%;
 
+  /* Muted */
   --muted: 214 40% 12%;
   --muted-foreground: 214 25% 60%;
 
+  /* Accent: cyan #00D9FF */
   --accent: 188 100% 50%;
   --accent-foreground: 214 62% 10%;
 
+  /* Destructive */
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
+  /* Cards */
   --card: 214 55% 11%;
   --card-foreground: 210 40% 94%;
   --card-border: 214 40% 18%;
 
+  /* Popover */
   --popover: 214 55% 10%;
   --popover-foreground: 210 40% 96%;
   --popover-border: 214 40% 18%;
 
+  /* Sidebar */
   --sidebar: 214 60% 9%;
   --sidebar-foreground: 210 40% 90%;
   --sidebar-border: 214 40% 16%;
@@ -112,12 +121,14 @@
   --sidebar-accent-foreground: 214 62% 10%;
   --sidebar-ring: 188 100% 50%;
 
+  /* Charts */
   --chart-1: 188 100% 50%;
   --chart-2: 200 80% 60%;
   --chart-3: 160 70% 45%;
   --chart-4: 260 60% 60%;
   --chart-5: 30 80% 55%;
 
+  /* Fonts */
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: 'Playfair Display', Georgia, serif;
   --app-font-mono: Menlo, monospace;
@@ -126,6 +137,7 @@
   --spacing: 0.25rem;
   --tracking-normal: 0em;
 
+  /* Shadows */
   --shadow-2xs: 0px 2px 4px 0px rgba(0,0,0,0.3);
   --shadow-xs: 0px 2px 6px 0px rgba(0,0,0,0.35);
   --shadow-sm: 0px 2px 8px 0px rgba(0,0,0,0.3), 0px 1px 2px -1px rgba(0,0,0,0.2);
@@ -135,13 +147,21 @@
   --shadow-xl: 0px 16px 40px 0px rgba(0,0,0,0.45), 0px 8px 10px -1px rgba(0,0,0,0.35);
   --shadow-2xl: 0px 24px 60px 0px rgba(0,0,0,0.5);
 
+  /* Computed borders */
   --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --primary-border: hsl(var(--primary));
-  --secondary-border: hsl(var(--secondary));
-  --muted-border: hsl(var(--muted));
-  --accent-border: hsl(var(--accent));
-  --destructive-border: hsl(var(--destructive));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 .dark {
@@ -246,6 +266,24 @@
   .no-default-hover-elevate {}
   .no-default-active-elevate {}
 
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
   .hover-elevate:not(.no-default-hover-elevate),
   .active-elevate:not(.no-default-active-elevate),
   .hover-elevate-2:not(.no-default-hover-elevate),
@@ -274,5 +312,13 @@
   .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
   .active-elevate-2:active:not(.no-default-active-elevate)::after {
     background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
   }
 }

@@ -1,0 +1,130 @@
+We are rebuilding a landing page using an existing structure. Do NOT overcomplicate.
+
+GOAL:
+Create a clean, working landing page where images and videos will be added manually after.
+
+-----------------------------------
+
+IMPORTANT:
+
+- Do NOT use /public paths
+- Use simple relative paths like: images/filename.jpg
+- Assume all assets will be placed in an "images" folder
+- Do NOT rename files automatically
+- Keep everything simple and reliable
+
+-----------------------------------
+
+STRUCTURE:
+
+1) HERO
+
+- Large hero section
+- Space for image: images/herowoman.jpeg OR video
+- Strong headline and CTA
+
+-----------------------------------
+
+2) PROBLEM SECTION
+
+- Add section:
+
+Headline:
+Aprender inglés no debería sentirse confuso
+
+Text:
+Muchos estudiantes no avanzan porque no tienen claridad sobre su nivel ni una ruta definida.
+
+Points:
+- Falta de claridad sobre tu nivel real
+- Ausencia de una ruta estructurada
+- Práctica limitada sin guía efectiva
+
+- Include image placeholder:
+images/problem.jpeg
+
+- Use 2-column layout (text + image)
+
+-----------------------------------
+
+3) HOW IT WORKS
+
+3 columns:
+
+- Diagnóstico → image: images/diagnostico.jpeg
+- Práctica guiada → image: images/practica.jpeg
+- Plataforma → video: images/dashboard.mp4
+
+Videos must:
+- autoplay
+- muted
+- loop
+
+Keep equal sizes
+
+-----------------------------------
+
+4) METODOLOGÍA
+
+- Simple 2-column section
+- Include ONE video:
+
+images/lightboard.mp4
+
+Keep layout clean
+
+-----------------------------------
+
+5) PROGRAMS
+
+4 cards:
+
+- General → images/general.jpeg
+- Business → images/business.jpeg
+- TKT → images/tkt.jpeg
+- Transporte → images/transporte.jpeg
+
+Rules:
+- same height for all cards
+- object-fit: cover
+- clean grid
+
+-----------------------------------
+
+6) TESTIMONIALS
+
+- simple, clean
+
+-----------------------------------
+
+7) FINAL CTA
+
+- strong CTA section
+- include image:
+
+images/cta.jpeg
+
+-----------------------------------
+
+DESIGN RULES:
+
+- Dark premium background
+- One light section for "How it works"
+- Clean spacing
+- No clutter
+- No unnecessary animations
+
+-----------------------------------
+
+DO NOT:
+
+- Do NOT use complex paths like /public
+- Do NOT auto-generate fake images
+- Do NOT redesign layout randomly
+- Do NOT add extra sections
+
+-----------------------------------
+
+GOAL:
+
+A clean, working landing page where ALL images and videos load correctly once placed in the images folder.

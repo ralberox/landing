@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Navbar() {
+  const [logoFailed, setLogoFailed] = useState(false);
+
   return (
     <nav style={{
       position: "fixed",
@@ -19,9 +23,27 @@ export default function Navbar() {
         justifyContent: "space-between",
         height: "68px",
       }}>
-        <div style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.02em", color: "#fff" }}>
-          <span style={{ color: "#2FB6FF" }}>V</span>Fluent
-        </div>
+        {/* Logo */}
+        <a href="#" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          {!logoFailed ? (
+            <img
+              src="images/vfluent-logo.png"
+              alt="VFluent"
+              onError={() => setLogoFailed(true)}
+              style={{
+                height: "36px",
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          ) : (
+            <span style={{ fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-0.02em", color: "#fff" }}>
+              <span style={{ color: "#2FB6FF" }}>V</span>Fluent
+            </span>
+          )}
+        </a>
+
         <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
           <a href="#how-it-works" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
             onMouseEnter={e => (e.currentTarget.style.color = "#fff")}

@@ -51,26 +51,31 @@ export default function HowItWorks() {
           </h2>
         </div>
 
+        {/* Grid: align-items stretch so all cards are the same total height */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "2rem",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "1.75rem",
+          alignItems: "stretch",
         }}>
           {steps.map((step, i) => (
             <div key={i} style={{
               background: "#fff",
               borderRadius: "0.75rem",
               overflow: "hidden",
-              boxShadow: "0 2px 16px rgba(11,28,44,0.08)",
-              border: "1px solid rgba(11,28,44,0.07)",
+              boxShadow: "0 2px 20px rgba(11,28,44,0.08)",
+              border: "1px solid rgba(11,28,44,0.06)",
               display: "flex",
               flexDirection: "column",
             }}>
+              {/* Media area — fixed height, identical on every card */}
               <div style={{
                 width: "100%",
-                aspectRatio: "16/10",
-                background: "#e8edf2",
+                height: "200px",
+                background: "#dde3ea",
                 overflow: "hidden",
+                flexShrink: 0,
+                position: "relative",
               }}>
                 {step.media.type === "video" ? (
                   <video
@@ -79,13 +84,27 @@ export default function HowItWorks() {
                     muted
                     loop
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
                   />
                 ) : (
                   <img
                     src={step.media.src}
                     alt={step.media.alt}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
                     onError={e => {
                       const el = e.currentTarget as HTMLImageElement;
                       el.style.display = "none";
@@ -94,17 +113,19 @@ export default function HowItWorks() {
                         parent.style.display = "flex";
                         parent.style.alignItems = "center";
                         parent.style.justifyContent = "center";
-                        parent.innerHTML = `<span style="color:#9baab8;font-size:0.85rem;">${step.media.src}</span>`;
+                        parent.innerHTML = `<span style="color:#9baab8;font-size:0.8rem;">${step.media.src}</span>`;
                       }
                     }}
                   />
                 )}
               </div>
-              <div style={{ padding: "1.5rem" }}>
+
+              {/* Text body */}
+              <div style={{ padding: "1.5rem", flexGrow: 1 }}>
                 <div style={{
-                  fontSize: "0.78rem",
+                  fontSize: "0.75rem",
                   fontWeight: 700,
-                  letterSpacing: "0.05em",
+                  letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   color: "#1490cc",
                   marginBottom: "0.5rem",
@@ -112,7 +133,7 @@ export default function HowItWorks() {
                   Paso {i + 1}
                 </div>
                 <h3 style={{
-                  fontSize: "1.2rem",
+                  fontSize: "1.15rem",
                   fontWeight: 700,
                   color: "#0B1C2C",
                   marginBottom: "0.6rem",
@@ -120,7 +141,7 @@ export default function HowItWorks() {
                   {step.title}
                 </h3>
                 <p style={{
-                  fontSize: "0.95rem",
+                  fontSize: "0.93rem",
                   color: "#4a6070",
                   lineHeight: 1.65,
                 }}>

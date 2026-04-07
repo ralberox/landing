@@ -73,32 +73,41 @@ export default function Programs() {
               border: "1px solid rgba(255,255,255,0.07)",
               display: "flex",
               flexDirection: "column",
-              transition: "transform 0.2s, border-color 0.2s",
+              transition: "transform 0.2s, border-color 0.2s, box-shadow 0.2s",
               cursor: "pointer",
             }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(47,182,255,0.35)";
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.transform = "translateY(-4px)";
+                el.style.borderColor = "rgba(47,182,255,0.35)";
+                el.style.boxShadow = "0 12px 32px rgba(47,182,255,0.08)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)";
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.transform = "translateY(0)";
+                el.style.borderColor = "rgba(255,255,255,0.07)";
+                el.style.boxShadow = "none";
               }}
             >
+              {/* Fixed-height image area — 220px, always consistent */}
               <div style={{
                 width: "100%",
-                height: "200px",
+                height: "220px",
                 background: "#0d1e2d",
                 overflow: "hidden",
                 flexShrink: 0,
+                position: "relative",
               }}>
                 <img
                   src={program.image}
                   alt={program.title}
                   style={{
+                    position: "absolute",
+                    inset: 0,
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
+                    objectPosition: "center",
                     display: "block",
                   }}
                   onError={e => {
@@ -109,21 +118,23 @@ export default function Programs() {
                       parent.style.display = "flex";
                       parent.style.alignItems = "center";
                       parent.style.justifyContent = "center";
-                      parent.innerHTML = `<span style="color:rgba(255,255,255,0.2);font-size:0.85rem;text-align:center;padding:1rem;">${program.image}</span>`;
+                      parent.innerHTML = `<span style="color:rgba(255,255,255,0.18);font-size:0.8rem;text-align:center;padding:1rem;">${program.image}</span>`;
                     }
                   }}
                 />
               </div>
+
+              {/* Card body */}
               <div style={{ padding: "1.5rem", flexGrow: 1 }}>
                 <div style={{
                   display: "inline-block",
                   background: "rgba(47,182,255,0.1)",
                   color: "#2FB6FF",
-                  fontSize: "0.75rem",
+                  fontSize: "0.72rem",
                   fontWeight: 700,
-                  letterSpacing: "0.04em",
+                  letterSpacing: "0.05em",
                   textTransform: "uppercase",
-                  padding: "0.2rem 0.65rem",
+                  padding: "0.2rem 0.7rem",
                   borderRadius: "2rem",
                   marginBottom: "0.75rem",
                 }}>
@@ -133,13 +144,13 @@ export default function Programs() {
                   fontSize: "1.1rem",
                   fontWeight: 700,
                   color: "#fff",
-                  marginBottom: "0.6rem",
+                  marginBottom: "0.5rem",
                 }}>
                   {program.title}
                 </h3>
                 <p style={{
                   fontSize: "0.9rem",
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.52)",
                   lineHeight: 1.65,
                 }}>
                   {program.description}

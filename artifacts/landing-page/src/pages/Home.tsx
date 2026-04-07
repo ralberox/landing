@@ -17,7 +17,7 @@ const courses = [
   {
     title: "Inglés General",
     image: "images/general.jpeg",
-    imagePosition: "center 20%",
+    imagePosition: "center top",
     iconBg: "bg-violet-500/20",
     iconColor: "text-violet-400",
     IconEl: Globe,
@@ -669,6 +669,7 @@ export default function Home() {
                   </div>
                   <h4 className="text-2xl lg:text-[1.875rem] font-bold font-serif text-[#0E1C36] leading-snug">{row.title}</h4>
                   <p className="text-[0.9375rem] text-slate-500 leading-relaxed font-light max-w-[26rem]">{row.description}</p>
+                  {i === 2 && (
                   <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <button
                       onClick={scrollToEnroll}
@@ -683,6 +684,7 @@ export default function Home() {
                       {row.secondaryBtn}
                     </button>
                   </div>
+                  )}
                 </motion.div>
 
                 <motion.div
@@ -764,9 +766,7 @@ export default function Home() {
                 labelColor: "text-cyan-300",
                 borderColor: "hover:border-cyan-400/30",
                 desc: "Entiende la gramática como un sistema conectado, no como reglas aisladas.",
-                icon: BookOpen,
-                iconColor: "text-cyan-400",
-                iconBg: "bg-cyan-400/10",
+                videoSrc: "images/grammar-flow.mp4",
                 delay: 0,
               },
               {
@@ -774,9 +774,7 @@ export default function Home() {
                 labelColor: "text-green-300",
                 borderColor: "hover:border-green-400/30",
                 desc: "Entrena tu oído y mejora tu pronunciación para hablar con mayor claridad y seguridad.",
-                icon: Video,
-                iconColor: "text-green-400",
-                iconBg: "bg-green-400/10",
+                videoSrc: "images/accoustic-phonetics%20.mp4",
                 delay: 0.1,
               },
               {
@@ -784,9 +782,7 @@ export default function Home() {
                 labelColor: "text-blue-300",
                 borderColor: "hover:border-blue-400/30",
                 desc: "Visualiza cómo se conecta el inglés para comprenderlo mejor y usarlo con más confianza.",
-                icon: Map,
-                iconColor: "text-blue-400",
-                iconBg: "bg-blue-400/10",
+                videoSrc: "images/concept-mapping%20.mp4",
                 delay: 0.2,
               },
             ].map((card, i) => (
@@ -796,13 +792,22 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, delay: card.delay, ease: "easeOut" }}
-                className={`flex flex-col rounded-2xl overflow-hidden border border-white/8 bg-white/[0.03] ${card.borderColor} transition-all duration-500 hover:bg-white/[0.07] p-8`}
+                className={`flex flex-col rounded-2xl overflow-hidden border border-white/8 bg-white/[0.03] ${card.borderColor} transition-all duration-500 hover:bg-white/[0.07]`}
               >
-                <div className={`w-14 h-14 rounded-2xl ${card.iconBg} flex items-center justify-center mb-6`}>
-                  <card.icon className={`w-7 h-7 ${card.iconColor}`} />
+                <div className="w-full overflow-hidden" style={{ height: "180px" }}>
+                  <video
+                    src={card.videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover block"
+                  />
                 </div>
-                <p className={`${card.labelColor} text-[10px] font-bold uppercase tracking-[0.18em] mb-3`}>{card.label}</p>
-                <p className="text-white/65 text-sm leading-relaxed font-light">{card.desc}</p>
+                <div className="p-8 flex flex-col">
+                  <p className={`${card.labelColor} text-[10px] font-bold uppercase tracking-[0.18em] mb-3`}>{card.label}</p>
+                  <p className="text-white/65 text-sm leading-relaxed font-light">{card.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -839,6 +844,7 @@ export default function Home() {
 
       {/* COURSES SECTION */}
       <section id="courses" className="py-24 lg:py-32 relative overflow-hidden" style={{ background: "#0b1727" }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "url('images/hex-bg.png')", backgroundSize: "auto", backgroundRepeat: "repeat", opacity: 0.035 }} />
         <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
           style={{ background: "linear-gradient(to right, transparent 10%, rgba(255,255,255,0.06) 50%, transparent 90%)" }} />
         <div className="absolute inset-0 pointer-events-none"
@@ -869,6 +875,7 @@ export default function Home() {
 
       {/* TESTIMONIALS SECTION */}
       <section id="testimonials" className="py-24 lg:py-32 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #111f36 0%, #0d1829 100%)" }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "url('images/hex-bg.png')", backgroundSize: "auto", backgroundRepeat: "repeat", opacity: 0.03 }} />
         <div className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
           style={{ background: "linear-gradient(to bottom, rgba(14,28,54,0.55) 0%, transparent 100%)" }} />
         <div className="absolute inset-0 pointer-events-none"
@@ -934,6 +941,7 @@ export default function Home() {
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
+            style={{ objectPosition: "center", objectFit: "contain" }}
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(6,16,42,0.88) 0%, rgba(8,19,37,0.82) 40%, rgba(6,14,32,0.85) 75%, rgba(4,12,26,0.92) 100%)" }} />
         </div>

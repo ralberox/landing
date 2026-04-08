@@ -577,12 +577,16 @@ export default function Home() {
               </ul>
             </FadeIn>
             <FadeIn delay={0.25} className="order-1 lg:order-2">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img
-                  src="images/problem.jpeg"
-                  alt="Teaching demo"
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
+                <video
+                  src="images/problem.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-80 lg:h-[420px] object-cover block"
                 />
+                <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(7,18,42,0.35) 0%, transparent 40%)" }} />
               </div>
             </FadeIn>
           </div>

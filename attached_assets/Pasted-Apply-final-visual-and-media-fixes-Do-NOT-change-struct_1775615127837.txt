@@ -1,0 +1,112 @@
+Apply final visual and media fixes. Do NOT change structure.
+
+-----------------------------------
+
+1) PROBLEM SECTION — REPLACE IMAGE WITH VIDEO
+
+In section:
+“Aprender inglés no debería sentirse confuso”
+
+Replace the current image with:
+
+images/problem.mp4
+
+Video settings:
+- autoplay
+- muted
+- loop
+- playsinline
+
+Ensure:
+- video fits container (no distortion)
+- maintain aspect ratio
+- add slight overlay if needed for readability
+
+-----------------------------------
+
+2) PROGRAMS — INGLES GENERAL IMAGE
+
+For:
+images/general.jpeg
+
+Fix framing:
+
+- center the subject (woman)
+- ensure face is fully visible
+- use:
+  object-fit: cover
+  object-position: center top
+- reduce cropping so she is not cut off
+
+-----------------------------------
+
+3) FINAL CTA IMAGE
+
+For:
+images/cta.jpeg (wide version)
+
+Fix layout:
+
+- place image on one side (right or left)
+- ensure both people are fully visible
+- reduce zoom if needed
+- use object-fit: cover
+- no face cropping
+
+-----------------------------------
+
+4) METODOLOGÍA — VIDEO BOXES
+
+Fix all video containers:
+
+- increase height of boxes
+- ensure videos are NOT cut off
+- maintain aspect ratio
+- use object-fit: cover
+
+Keep main video dominant and visible
+
+-----------------------------------
+
+5) PROGRAMS + TESTIMONIALS BACKGROUND
+
+Apply honeycomb background:
+
+images/hex-bg.png
+
+Apply ONLY to:
+- Programs section
+- Testimonials section
+
+Style:
+- very low opacity
+- subtle and premium
+
+-----------------------------------
+
+6) FOOTER DESIGN
+
+Update footer:
+
+- match hero dark color (#0B1C2C)
+- add subtle honeycomb background
+- ensure consistency with top of page
+
+-----------------------------------
+
+IMPORTANT
+
+- Do NOT modify hero section
+- Do NOT change layout
+- Do NOT rename files
+- Only apply fixes listed
+
+-----------------------------------
+
+GOAL
+
+Final polish:
+- working video in problem section
+- properly framed images
+- clean video display
+- consistent premium branding

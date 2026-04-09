@@ -1,218 +1,629 @@
+TML
+Copiar
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VFluent</title>
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>VFluent — Domina el inglés con claridad y estructura</title>
+<meta name="description" content="Diagnóstico preciso, ruta personalizada y práctica guiada con docentes. Más de 5000 estudiantes avanzando con VFluent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0B1C2C;
-  color: #fff;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#02060e;--deep:#060d1c;--navy:#091422;--navy2:#0c1a30;
+  --light:#EDF4F9;--light2:#E5EEF5;
+  --cyan:#00D4F5;--cyan-soft:rgba(0,212,245,.35);
+  --gold:#C9A96E;--gold2:#E0BC85;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
 }
-
-section {
-  padding: 60px 20px;
-  text-align: center;
+body{font-family:var(--sans);background:var(--ink);color:#fff;overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:rgba(0,212,245,.22);border-radius:3px}
+ 
+/* ─ LAYOUT ─ */
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+ 
+/* ─ BUTTONS ─ */
+.btn-cta{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--cyan),#3B82F6);color:#020a14;padding:15px 30px;border-radius:999px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
+.btn-cta:hover{box-shadow:0 0 44px var(--cyan-soft);transform:scale(1.03) translateY(-1px)}
+.btn-cta svg{transition:transform .22s}
+.btn-cta:hover svg{transform:translateX(4px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:15px 30px;border-radius:999px;font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease);backdrop-filter:blur(10px);background:rgba(255,255,255,.04)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.4)}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#22c55e;color:#fff;padding:15px 30px;border-radius:999px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease)}
+.btn-wa:hover{background:#16a34a;box-shadow:0 0 36px rgba(34,197,94,.38);transform:scale(1.03)}
+.btn-wa svg{width:18px;height:18px;fill:#fff}
+.btn-cta-lt{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00D4F5,#3B82F6);color:#030d18;padding:13px 24px;border-radius:999px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease)}
+.btn-cta-lt:hover{box-shadow:0 8px 28px rgba(0,212,245,.3);transform:translateY(-1px)}
+.btn-cta-lt svg{transition:transform .2s}
+.btn-cta-lt:hover svg{transform:translateX(3px)}
+.btn-ghost-lt{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(14,28,54,.14);color:#475569;padding:13px 24px;border-radius:999px;font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease);background:rgba(255,255,255,.65)}
+.btn-ghost-lt:hover{border-color:rgba(0,168,197,.3);color:#007A9A}
+ 
+/* ─ REVEAL ─ */
+.fi{opacity:0;transform:translateY(26px);transition:opacity .82s var(--ease),transform .82s var(--ease)}
+.fi.in{opacity:1;transform:none}
+.fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}.fi.d4{transition-delay:.4s}
+ 
+/* ─ EYEBROW ─ */
+.brow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.brow-line{width:22px;height:1px;background:var(--cyan);opacity:.65}
+.brow-text{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);opacity:.82}
+.brow-center{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
+ 
+/* ─ SECTION HEADINGS ─ */
+.sh{font-family:var(--serif);font-size:clamp(30px,3.8vw,46px);font-weight:600;line-height:1.13;color:#fff;margin-bottom:16px;letter-spacing:-.015em}
+.sh-dk{font-family:var(--serif);font-size:clamp(30px,3.8vw,46px);font-weight:600;line-height:1.13;color:#0E1C36;margin-bottom:16px;letter-spacing:-.015em}
+.sp{font-size:15px;color:rgba(255,255,255,.46);line-height:1.82;font-weight:300;max-width:420px}
+.sp-dk{font-size:15px;color:#64748b;line-height:1.82;font-weight:300}
+ 
+/* ─ GRAIN OVERLAY ─ */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025}
+.grain::after{content:'';position:absolute;inset:-200%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px;animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-5%)}30%{transform:translate(3%,-3%)}50%{transform:translate(-1%,4%)}70%{transform:translate(5%,1%)}90%{transform:translate(-3%,5%)}}
+ 
+/* ══════ NAVBAR ══════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 0;transition:.38s var(--ease)}
+#nav.stuck{padding:13px 0;background:rgba(4,9,20,.94);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);box-shadow:0 6px 40px rgba(0,0,0,.4)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;letter-spacing:.01em}
+.nav-logo span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .22s}
+.nav-links a:hover{color:var(--cyan)}
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
+.hbg span{width:22px;height:1.8px;background:#fff;border-radius:2px;display:block;transition:.3s var(--ease)}
+.hbg.o span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.o span:nth-child(2){opacity:0}
+.hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob{display:none;flex-direction:column;background:rgba(4,9,20,.97);backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,.06);padding:14px 0 22px}
+.mob.o{display:flex}
+.mob a{padding:13px 28px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.68);border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s}
+.mob a:hover{color:var(--cyan)}
+.mob-cta{padding:18px 28px 0}
+ 
+/* ══════ S1 HERO — deep dark navy ══════ */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+  background:linear-gradient(148deg,#060d1c 0%,#0c1a33 42%,#071224 72%,#02060e 100%)}
+.h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:.44;filter:contrast(1.1) saturate(.88)}
+.h-ov1{position:absolute;inset:0;background:linear-gradient(to right,#060d1c 0%,#060d1c 28%,rgba(6,13,28,.82) 44%,rgba(6,13,28,.06) 60%,transparent 72%)}
+.h-ov2{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,6,14,.72) 0%,transparent 24%)}
+.h-ov3{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,14,1) 0%,rgba(2,6,14,.5) 15%,transparent 33%)}
+.h-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 55% at 72% 48%,rgba(0,212,245,.048) 0%,transparent 65%)}
+.h-hc{position:absolute;inset:0;opacity:.09;pointer-events:none}
+.h-deco{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(0,212,245,.18) 35%,rgba(201,169,110,.14) 65%,transparent)}
+ 
+.h-content{position:relative;z-index:10;padding:188px 0 148px;max-width:570px}
+.h-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:999px;border:1px solid rgba(201,169,110,.22);background:rgba(201,169,110,.06);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,110,.88);margin-bottom:30px}
+.h-pulse{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+.h-h1{font-family:var(--serif);font-size:clamp(44px,5.8vw,70px);font-weight:600;line-height:1.07;letter-spacing:-.02em;color:#fff;margin-bottom:24px}
+.h-h1 em{font-style:italic;color:var(--gold2)}
+.h-sub{font-size:16px;color:rgba(255,255,255,.46);line-height:1.78;font-weight:300;max-width:430px;margin-bottom:38px}
+.h-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+ 
+/* ══════ S2 PROBLEM — continuous dark (slight shift) ══════ */
+#problem{background:linear-gradient(to bottom,var(--ink) 0%,#070e1d 100%);padding:112px 0 96px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.two-col.flip{direction:rtl}
+.two-col.flip>*{direction:ltr}
+.dot-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.dot-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(255,255,255,.62);line-height:1.65}
+.dot{flex-shrink:0;margin-top:4px;width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,212,245,.32);background:rgba(0,212,245,.07);display:flex;align-items:center;justify-content:center}
+.dot::after{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+.frame-dk{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);box-shadow:0 28px 72px rgba(0,0,0,.55);position:relative}
+.frame-dk img,.frame-dk video{width:100%;height:380px;object-fit:cover}
+.frame-dk::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,28,.42) 0%,transparent 45%);pointer-events:none}
+ 
+/* ══════ VALUE PILLARS — same dark ══════ */
+#pillars{background:linear-gradient(to bottom,#070e1d 0%,#0a1420 100%);padding:0 0 96px}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pil{background:rgba(255,255,255,.038);border:1px solid rgba(255,255,255,.075);border-radius:18px;padding:30px 22px;text-align:center;transition:.32s var(--ease);position:relative;overflow:hidden}
+.pil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(0,212,245,.065) 0%,transparent 68%);opacity:0;transition:.32s var(--ease)}
+.pil:hover{border-color:rgba(0,212,245,.2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.32)}
+.pil:hover::before{opacity:1}
+.pil-ico{width:48px;height:48px;border-radius:13px;margin:0 auto 16px;background:linear-gradient(135deg,rgba(0,212,245,.1),rgba(59,130,246,.07));border:1px solid rgba(0,212,245,.13);display:flex;align-items:center;justify-content:center}
+.pil-ico svg{width:21px;height:21px;fill:none;stroke:var(--cyan);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pil-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.72);line-height:1.45}
+ 
+/* ══════ S3 HOW IT WORKS — LIGHT (the one intentional break) ══════ */
+#how{background:linear-gradient(to bottom,#EDF4F9 0%,#E6EFF6 55%,#ECF3F9 100%);padding:112px 0;position:relative;overflow:hidden}
+#how::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,168,197,.18) 50%,transparent 90%)}
+#how::after{content:'';position:absolute;top:-100px;right:-100px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(0,168,197,.06) 0%,transparent 70%);pointer-events:none}
+.how-head{text-align:center;max-width:500px;margin:0 auto 80px}
+.how-rows{display:flex;flex-direction:column;gap:84px}
+.how-row{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.how-row.flip{direction:rtl}
+.how-row.flip>*{direction:ltr}
+.sn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ddf4f9,#e6f4ff);border:1px solid rgba(0,168,197,.18);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.sn span{font-family:var(--serif);font-size:14px;font-weight:700;color:#00A8C5}
+.fh{font-family:var(--serif);font-size:26px;font-weight:700;color:#0E1C36;margin-bottom:12px;line-height:1.2}
+.fp{font-size:15px;color:#64748b;line-height:1.8;font-weight:300;max-width:380px;margin-bottom:24px}
+.fbtns{display:flex;gap:12px;flex-wrap:wrap}
+.frame-lt{border-radius:18px;overflow:hidden;border:1px solid rgba(14,28,54,.07);box-shadow:0 8px 40px rgba(14,28,54,.09)}
+.frame-lt img,.frame-lt video{width:100%;height:340px;object-fit:cover;display:block}
+ 
+/* ══════ S4 METHODOLOGY — back to deepest dark ══════ */
+#meth{background:linear-gradient(to bottom,#02060e 0%,#050b17 55%,#030710 100%);padding:112px 0;position:relative;overflow:hidden}
+#meth::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,212,245,.22) 50%,transparent 90%)}
+.meth-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 68% 50% at 50% 44%,rgba(0,18,55,.6) 0%,transparent 68%)}
+.mb{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;border:1px solid rgba(0,212,245,.26);background:rgba(0,212,245,.05);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,212,245,.82);margin-bottom:20px}
+.mb-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2.2s infinite}
+.mh{font-family:var(--serif);font-size:clamp(32px,4.2vw,52px);font-weight:600;color:#fff;line-height:1.12;letter-spacing:-.015em;margin-bottom:16px}
+.mh span{background:linear-gradient(90deg,#67e8f9 0%,#86efac 50%,#67e8f9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:shimmer 5s linear infinite}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+.mp{font-size:15px;color:rgba(255,255,255,.44);max-width:490px;margin:0 auto;font-weight:300;line-height:1.82}
+.meth-head{text-align:center;margin-bottom:52px}
+.lb{max-width:750px;margin:0 auto 46px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 28px 80px rgba(0,0,0,.65)}
+.lb video{width:100%;height:325px;object-fit:cover;display:block}
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:42px}
+.mc{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.028);transition:.32s var(--ease)}
+.mc:hover{border-color:rgba(0,212,245,.2);background:rgba(255,255,255,.065);transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,.38)}
+.mc video{width:100%;height:170px;object-fit:cover;display:block}
+.mc-body{padding:22px 24px}
+.mc-lbl{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.c1{color:#67e8f9}.c2{color:#86efac}.c3{color:#93c5fd}
+.mc-p{font-size:13px;color:rgba(255,255,255,.52);line-height:1.65;font-weight:300}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.pill{padding:9px 20px;border-radius:999px;font-size:12.5px;font-weight:500;backdrop-filter:blur(8px);transition:.26s var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.p1{border:1px solid rgba(0,212,245,.3);background:rgba(0,212,245,.08);color:#67e8f9}
+.p2{border:1px solid rgba(134,239,172,.3);background:rgba(134,239,172,.08);color:#86efac}
+.p3{border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.08);color:#fca5a5}
+.p4{border:1px solid rgba(147,197,253,.3);background:rgba(147,197,253,.08);color:#93c5fd}
+.p5{border:1px solid rgba(196,181,253,.3);background:rgba(196,181,253,.08);color:#c4b5fd}
+ 
+/* ══════ S5 COURSES — slightly lifted dark navy ══════ */
+#courses{background:linear-gradient(to bottom,#030710 0%,#08111e 55%,#05101a 100%);padding:112px 0;position:relative}
+#courses::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(255,255,255,.06) 50%,transparent 90%)}
+.ch{text-align:center;max-width:560px;margin:0 auto 50px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cc{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.085);background:rgba(255,255,255,.038);transition:.35s var(--ease);display:flex;flex-direction:column}
+.cc:hover{border-color:rgba(0,212,245,.22);background:rgba(255,255,255,.08);transform:translateY(-4px);box-shadow:0 10px 44px rgba(0,0,0,.32)}
+.cc-img{position:relative;height:218px;overflow:hidden;flex-shrink:0}
+.cc-img img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease)}
+.cc:hover .cc-img img{transform:scale(1.04)}
+.cc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62) 0%,rgba(0,0,0,.18) 40%,transparent 70%)}
+.cc-ico{position:absolute;top:14px;left:14px;width:37px;height:37px;border-radius:11px;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center}
+.cc-ico svg{width:16px;height:16px}
+.cc-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+.cc-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3;transition:color .25s}
+.cc:hover .cc-title{color:var(--cyan)}
+.cc-meta{font-size:12.5px;color:rgba(255,255,255,.48);line-height:1.65;margin-bottom:6px}
+.cc-meta strong{color:rgba(255,255,255,.76);font-weight:600}
+.cc-exp{max-height:0;overflow:hidden;transition:max-height .42s var(--ease),opacity .35s;opacity:0}
+.cc:hover .cc-exp{max-height:260px;opacity:1}
+.cc-bens{list-style:none;margin:13px 0 17px;display:flex;flex-direction:column;gap:7px;padding-top:13px;border-top:1px solid rgba(255,255,255,.065)}
+.cc-bens li{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.5}
+.cc-bens li::before{content:'✓';color:var(--cyan);font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px}
+.cc-btns{display:flex;gap:10px}
+.cbp{flex:1;background:linear-gradient(135deg,var(--cyan),#3B82F6);color:#020a14;padding:10px;border-radius:999px;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;justify-content:center;gap:5px;transition:.26s var(--ease)}
+.cbp:hover{box-shadow:0 0 22px rgba(0,212,245,.3)}
+.cbo{flex:1;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.68);padding:10px;border-radius:999px;font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;justify-content:center;transition:.26s var(--ease)}
+.cbo:hover{background:rgba(255,255,255,.07)}
+ 
+/* ══════ S6 TESTIMONIALS — warmer deep blue ══════ */
+#testi{background:linear-gradient(to bottom,#0a1422 0%,#0d1c36 55%,#09142a 100%);padding:112px 0;position:relative;overflow:hidden}
+#testi::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,212,245,.16) 50%,transparent 90%)}
+#testi::after{content:'"';position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:420px;color:rgba(255,255,255,.015);pointer-events:none;line-height:1}
+.th{text-align:center;max-width:620px;margin:0 auto 58px}
+.t-div{width:42px;height:2px;background:var(--cyan);opacity:.75;margin:0 auto 14px}
+.t-tag{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,212,245,.78);margin-bottom:14px}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{border-radius:22px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.035);backdrop-filter:blur(8px);padding:28px;display:flex;flex-direction:column;position:relative;transition:.32s var(--ease)}
+.tc:hover{border-color:rgba(0,212,245,.16);transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,0,0,.3)}
+.tc-bq{position:absolute;top:14px;right:18px;font-family:var(--serif);font-size:78px;line-height:1;color:rgba(255,255,255,.038);pointer-events:none}
+.t-stars{display:flex;gap:3px;margin-bottom:15px}
+.t-stars svg{width:13px;height:13px;fill:var(--cyan);color:var(--cyan)}
+.t-txt{font-family:var(--serif);font-style:italic;font-size:14.5px;color:rgba(255,255,255,.66);line-height:1.75;flex:1;margin-bottom:22px}
+.t-auth{display:flex;align-items:center;gap:12px;padding-top:17px;border-top:1px solid rgba(255,255,255,.07)}
+.t-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff}
+.t-name{font-size:13px;font-weight:700;color:#fff}
+.t-role{font-size:11px;color:rgba(255,255,255,.38);margin-top:2px}
+ 
+/* ══════ S7 CTA — near-black, premium ══════ */
+#cta-sec{padding:140px 0;position:relative;overflow:hidden;background:#020609}
+.cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.2;filter:saturate(.55)}
+.cta-ov{position:absolute;inset:0;background:linear-gradient(155deg,rgba(2,6,14,.95) 0%,rgba(4,10,22,.9) 40%,rgba(2,6,14,.93) 75%,rgba(1,4,10,.97) 100%)}
+.cta-bf{position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(to bottom,transparent,#020609);z-index:1;pointer-events:none}
+.cta-inner{position:relative;z-index:2;max-width:740px;margin:0 auto}
+.cta-box{border-radius:28px;border:1px solid rgba(201,169,110,.16);background:rgba(0,0,0,.38);backdrop-filter:blur(20px);padding:80px 64px;text-align:center;box-shadow:0 0 120px rgba(0,212,245,.04),inset 0 1px 0 rgba(255,255,255,.06);position:relative}
+.cta-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:55%;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.32),transparent)}
+.cta-eye{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,110,.82);margin-bottom:18px}
+.cta-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
+.cta-h{font-family:var(--serif);font-size:clamp(32px,4.5vw,54px);font-weight:600;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.015em}
+.cta-p{font-size:16px;color:rgba(255,255,255,.5);max-width:450px;margin:0 auto 38px;line-height:1.78;font-weight:300}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+ 
+/* ══════ FOOTER ══════ */
+footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,255,.045)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;margin-bottom:50px}
+.fl{font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;display:block;margin-bottom:13px}
+.fl span{color:var(--cyan)}
+.fd{font-size:13.5px;color:rgba(255,255,255,.38);line-height:1.78;font-weight:300;max-width:270px}
+.fh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--cyan);margin-bottom:20px;opacity:.75}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:11px}
+.flinks a{font-size:13.5px;color:rgba(255,255,255,.42);font-weight:300;transition:color .2s}
+.flinks a:hover{color:var(--cyan)}
+.fsoc{display:flex;gap:9px;margin-top:20px}
+.s-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);transition:.26s var(--ease)}
+.s-btn:hover{background:var(--cyan);border-color:var(--cyan);color:#02060e}
+.s-btn svg{width:13px;height:13px;fill:currentColor}
+.f-div{height:1px;margin-bottom:24px;background:linear-gradient(to right,transparent,rgba(0,212,245,.16),transparent)}
+.f-bot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.28);flex-wrap:wrap;gap:10px}
+.f-bot a{color:rgba(255,255,255,.28);transition:color .2s}
+.f-bot a:hover{color:rgba(255,255,255,.55)}
+.f-blinks{display:flex;gap:20px}
+ 
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .nav-links,.nav-right{display:none}
+  .hbg{display:flex}
+  .two-col,.two-col.flip,.how-row,.how-row.flip,.cgrid{grid-template-columns:1fr;direction:ltr;gap:36px}
+  .p-grid{grid-template-columns:repeat(2,1fr)}
+  .mcards{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .cta-box{padding:48px 28px}
+  .h-content{padding:120px 0 80px;max-width:100%}
+  .frame-dk img,.frame-dk video{height:260px}
+  .frame-lt img,.frame-lt video{height:240px}
 }
-
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* HERO /
-.hero {
-  background: linear-gradient(rgba(11,28,44,0.8), rgba(11,28,44,0.9)), url('herowoman.jpeg') center/cover no-repeat;
-  padding: 120px 20px;
-}
-
-.hero h1 {
-  font-size: 42px;
-}
-
-.btn {
-  background: #00C2FF;
-  padding: 12px 24px;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 20px;
-  border-radius: 6px;
-}
-
-/ VIDEO /
-video {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-}
-
-/ GRID /
-.grid {
-  display: grid;
-  gap: 20px;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-  background: #132B3C;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/ PROGRAM IMAGES /
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 10px;
-}
-
-/ CTA /
-.cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-}
-
-.cta img {
-  width: 100%;
-  max-width: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/ FOOTER */
-footer {
-  background: #08141F;
-  padding: 40px 20px;
-  font-size: 14px;
+@media(max-width:560px){
+  .h-btns,.cta-btns,.fbtns{flex-direction:column}
+  .h-h1{font-size:38px}
 }
 </style>
-
 </head>
-
 <body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Domina el inglés con claridad y estructura</h1>
-    <p>Diagnóstico → Ruta → Fluidez real</p>
-    <a class="btn" href="#">Tomar diagnóstico</a>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section>
-  <div class="container">
-    <h2>Aprender inglés no debería sentirse confuso</h2>
-    <video autoplay muted loop playsinline>
-      <source src="problem.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section>
-  <div class="container grid grid-3">
-    <div class="card">
-      <h3>Diagnostica</h3>
-      <img src="diagnostico.jpeg">
-    </div>
-    <div class="card">
-      <h3>Avanza</h3>
-      <img src="practica.jpeg">
-    </div>
-    <div class="card">
-      <h3>Habla con fluidez</h3>
-      <video autoplay muted loop playsinline>
-        <source src="dashboard.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- METODOLOGÍA -->
-<section>
-  <div class="container">
-    <h2>Metodología VFluent</h2>
-
-    <video autoplay muted loop playsinline>
-      <source src="lightboard.mp4" type="video/mp4">
-    </video>
-
-    <div class="grid grid-3" style="margin-top:30px;">
-      <video autoplay muted loop><source src="grammar-flow.mp4"></video>
-      <video autoplay muted loop><source src="acoustic-phonetics.mp4"></video>
-      <video autoplay muted loop><source src="concept-mapping.mp4"></video>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section style="background:#0E2435;">
-  <div class="container">
-    <h2>Programas</h2>
-
-    <div class="grid grid-3">
-      <div class="card">
-        <img src="ingles-general.jpeg">
-        <h3>Inglés General</h3>
+<div class="grain" aria-hidden="true"></div>
+ 
+<!-- NAVBAR -->
+<header id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">VFluent<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#hero">Inicio</a>
+        <a href="#courses">Programas</a>
+        <a href="#how">Metodología</a>
+        <a href="#testi">Testimonios</a>
+      </nav>
+      <div class="nav-right" style="display:flex">
+        <a href="#cta-sec" class="btn-cta" style="font-size:11px;padding:11px 22px">
+          Tomar examen
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
-      <div class="card">
-        <img src="business.jpeg">
-        <h3>Business English</h3>
+      <button class="hbg" id="hbg" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mob" id="mob">
+    <a href="#hero">Inicio</a>
+    <a href="#courses">Programas</a>
+    <a href="#how">Metodología</a>
+    <a href="#testi">Testimonios</a>
+    <div class="mob-cta"><a href="#cta-sec" class="btn-cta" style="width:100%;justify-content:center">Tomar examen de ubicación</a></div>
+  </div>
+</header>
+ 
+<!-- S1: HERO -->
+<section id="hero">
+  <img class="h-photo" src="herowoman.jpeg" alt="" aria-hidden="true">
+  <div class="h-ov1"></div><div class="h-ov2"></div><div class="h-ov3"></div><div class="h-glow"></div>
+  <svg class="h-hc" viewBox="0 0 1600 950" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="hg" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
+    <g id="hexg"></g>
+  </svg>
+  <div class="wrap">
+    <div class="h-content">
+      <div class="h-badge fi"><span class="h-pulse"></span>Impulsado por docentes y tecnología</div>
+      <h1 class="h-h1 fi d1">Entiende tu inglés,<br><em>perfecciónalo</em><br>y habla con fluidez.</h1>
+      <p class="h-sub fi d2">Haz el examen de ubicación de VFluent y recibe tu ruta de aprendizaje personalizada en menos de 15 minutos.</p>
+      <div class="h-btns fi d3">
+        <a href="#cta-sec" class="btn-cta">
+          Tomar examen de ubicación
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-ghost">Hablar con un asesor</a>
       </div>
-      <div class="card">
-        <img src="tkt.jpeg">
-        <h3>TKT</h3>
+    </div>
+  </div>
+  <div class="h-deco"></div>
+</section>
+ 
+<!-- S2: PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="fi">
+        <div class="brow"><div class="brow-line"></div><span class="brow-text">El problema</span></div>
+        <h2 class="sh">Aprender inglés no debería sentirse confuso</h2>
+        <p class="sp">Muchos estudiantes no avanzan porque no tienen claridad sobre su nivel ni una ruta definida.</p>
+        <ul class="dot-list">
+          <li><span class="dot"></span>Falta de claridad sobre tu nivel real</li>
+          <li><span class="dot"></span>Ausencia de una ruta estructurada</li>
+          <li><span class="dot"></span>Práctica limitada sin guía efectiva</li>
+        </ul>
       </div>
-      <div class="card">
-        <img src="transportistas.jpeg">
-        <h3>Transporte</h3>
+      <div class="fi d2">
+        <div class="frame-dk"><video autoplay muted loop playsinline><source src="problem.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- TESTIMONIALS -->
-<section>
-  <div class="container">
-    <h2>Resultados reales</h2>
-    <p>Más de 5000 estudiantes avanzando con estructura y confianza</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section>
-  <div class="container cta">
-    <div>
-      <h2>Empieza hoy</h2>
-      <p>Toma tu diagnóstico y define tu ruta</p>
-      <a class="btn" href="#">Hablar por WhatsApp</a>
+ 
+<!-- VALUE PILLARS -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="p-grid">
+      <div class="pil fi">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9l2 2 4-4"/></svg></div>
+        <div class="pil-lbl">Diagnóstico preciso</div>
+      </div>
+      <div class="pil fi d1">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="pil-lbl">Ruta personalizada</div>
+      </div>
+      <div class="pil fi d2">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <div class="pil-lbl">Clases en vivo</div>
+      </div>
+      <div class="pil fi d3">
+        <div class="pil-ico"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="pil-lbl">Docentes + tecnología</div>
+      </div>
     </div>
-    <img src="cta.jpeg">
   </div>
 </section>
-
+ 
+<!-- S3: HOW IT WORKS (light) -->
+<section id="how">
+  <div class="wrap">
+    <div class="how-head fi">
+      <div class="brow-center"><div class="brow-line"></div><span class="brow-text">Cómo funciona</span><div class="brow-line"></div></div>
+      <h2 class="sh-dk">Diagnostica. Avanza.<br>Habla con confianza.</h2>
+      <p class="sp-dk">Tres pasos para llevar tu inglés de donde está hoy a donde necesitas que esté.</p>
+    </div>
+    <div class="how-rows">
+      <div class="how-row fi">
+        <div>
+          <div class="sn"><span>1</span></div>
+          <h3 class="fh">Diagnóstico claro desde el inicio</h3>
+          <p class="fp">Haz tu examen de ubicación y entiende tu nivel actual, tus fortalezas y los bloqueos que frenan tu avance.</p>
+          <div class="fbtns">
+            <a href="#cta-sec" class="btn-cta-lt">Tomar examen<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="https://wa.me/5218134144557" target="_blank" class="btn-ghost-lt">Hablar con asesor</a>
+          </div>
+        </div>
+        <div class="frame-lt"><img src="diagnostico.jpeg" alt="Diagnóstico VFluent" loading="lazy"></div>
+      </div>
+      <div class="how-row flip fi">
+        <div>
+          <div class="sn"><span>2</span></div>
+          <h3 class="fh">Práctica guiada con docentes en vivo</h3>
+          <p class="fp">Participa en sesiones en vivo con acompañamiento docente y desarrolla tu inglés con estructura, claridad y seguimiento real.</p>
+        </div>
+        <div class="frame-lt"><img src="practicaguiada.jpeg" alt="Práctica guiada" loading="lazy" onerror="this.src='diagnostico.jpeg'"></div>
+      </div>
+      <div class="how-row fi">
+        <div>
+          <div class="sn"><span>3</span></div>
+          <h3 class="fh">Plataforma y seguimiento en un solo lugar</h3>
+          <p class="fp">Accede a recursos, seguimiento de progreso y tu ruta de aprendizaje en una experiencia organizada y disponible cuando la necesites.</p>
+          <div class="fbtns">
+            <a href="#courses" class="btn-cta-lt">Ver programas<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="#cta-sec" class="btn-ghost-lt">Comenzar ahora</a>
+          </div>
+        </div>
+        <div class="frame-lt"><video autoplay muted loop playsinline><source src="dashboard .mp4" type="video/mp4"></video></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- S4: METHODOLOGY -->
+<section id="meth">
+  <div class="meth-glow"></div>
+  <div class="wrap" style="position:relative;z-index:10">
+    <div class="meth-head fi">
+      <div class="mb"><span class="mb-dot"></span>Nuestra metodología</div>
+      <h2 class="mh">Donde la tecnología<br><span>impulsa el aprendizaje</span></h2>
+      <p class="mp">Combinamos explicación visual, acompañamiento docente y una metodología clara para que entender el inglés sea más fácil y hablarlo más natural.</p>
+    </div>
+    <div class="lb fi"><video autoplay muted loop playsinline><source src="lightboard.mp4" type="video/mp4"></video></div>
+    <div class="mcards">
+      <div class="mc fi">
+        <video autoplay muted loop playsinline><source src="grammar-flow.mp4" type="video/mp4"></video>
+        <div class="mc-body"><div class="mc-lbl c1">Grammar Flow™</div><p class="mc-p">Entiende la gramática como un sistema conectado, no como reglas aisladas.</p></div>
+      </div>
+      <div class="mc fi d1">
+        <video autoplay muted loop playsinline><source src="accoustic-phonetics .mp4" type="video/mp4"></video>
+        <div class="mc-body"><div class="mc-lbl c2">Acoustic Phonetics™</div><p class="mc-p">Entrena tu oído y mejora tu pronunciación para hablar con mayor claridad y seguridad.</p></div>
+      </div>
+      <div class="mc fi d2">
+        <video autoplay muted loop playsinline><source src="concept-mapping .mp4" type="video/mp4"></video>
+        <div class="mc-body"><div class="mc-lbl c3">Concept Mapping™</div><p class="mc-p">Visualiza cómo se conecta el inglés para comprenderlo mejor y usarlo con más confianza.</p></div>
+      </div>
+    </div>
+    <div class="pills fi">
+      <span class="pill p1">Gramática y fluidez</span>
+      <span class="pill p2">Desarrollo de vocabulario</span>
+      <span class="pill p1">Patrones de oración</span>
+      <span class="pill p3">Práctica conversacional</span>
+      <span class="pill p4">Comunicación segura</span>
+      <span class="pill p5">Partes del habla</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- S5: COURSES -->
+<section id="courses">
+  <div class="wrap">
+    <div class="ch fi">
+      <div class="brow-center"><div class="brow-line" style="background:rgba(0,212,245,.55)"></div><span class="brow-text" style="color:rgba(0,212,245,.72)">Nuestros programas</span><div class="brow-line" style="background:rgba(0,212,245,.55)"></div></div>
+      <h2 class="sh">Encuentra el programa ideal para ti</h2>
+      <p class="sp" style="margin:0 auto;text-align:center">Explora nuestros programas y descubre la ruta que mejor se adapta a tu nivel, tus metas y tu contexto.</p>
+    </div>
+    <div class="cgrid">
+      <div class="cc fi">
+        <div class="cc-img"><img src="ingles-general.jpeg" alt="Inglés General" loading="lazy"><div class="cc-ov"></div><div class="cc-ico" style="background:rgba(139,92,246,.22)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div></div>
+        <div class="cc-body">
+          <h4 class="cc-title">Inglés General</h4>
+          <p class="cc-meta"><strong>Para quién:</strong> Quienes buscan desarrollar su inglés desde una base sólida.</p>
+          <p class="cc-meta"><strong>Incluye:</strong> Expresión oral, comprensión auditiva, gramática y vocabulario.</p>
+          <div class="cc-exp"><ul class="cc-bens"><li>Construye una base sólida para comunicarte con confianza</li><li>Mejora tu expresión oral y vocabulario paso a paso</li><li>Avanza con práctica guiada y estructurada</li></ul><div class="cc-btns"><button onclick="location.href='#cta-sec'" class="cbo">Asesor</button><button onclick="location.href='#cta-sec'" class="cbp">Inscribirme<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></div></div>
+        </div>
+      </div>
+      <div class="cc fi d1">
+        <div class="cc-img"><img src="business.jpeg" alt="Business English" loading="lazy"><div class="cc-ov"></div><div class="cc-ico" style="background:rgba(59,130,246,.22)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div>
+        <div class="cc-body">
+          <h4 class="cc-title">Business English</h4>
+          <p class="cc-meta"><strong>Para quién:</strong> Profesionales con necesidades en reuniones, presentaciones y comunicación laboral.</p>
+          <p class="cc-meta"><strong>Incluye:</strong> Reuniones, presentaciones, correos y vocabulario profesional.</p>
+          <div class="cc-exp"><ul class="cc-bens"><li>Desarrolla seguridad en contextos profesionales reales</li><li>Mejora tu comunicación en reuniones y presentaciones</li><li>Fortalece tu inglés para crecer en el trabajo</li></ul><div class="cc-btns"><button onclick="location.href='#cta-sec'" class="cbo">Asesor</button><button onclick="location.href='#cta-sec'" class="cbp">Inscribirme<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></div></div>
+        </div>
+      </div>
+      <div class="cc fi d2">
+        <div class="cc-img"><img src="transportistas.jpeg" alt="Inglés para Transporte" loading="lazy"><div class="cc-ov"></div><div class="cc-ico" style="background:rgba(16,185,129,.22)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div></div>
+        <div class="cc-body">
+          <h4 class="cc-title">Inglés para Transporte</h4>
+          <p class="cc-meta"><strong>Para quién:</strong> Operadores y profesionales del transporte y la logística.</p>
+          <p class="cc-meta"><strong>Incluye:</strong> Vocabulario operativo, inspecciones e interacción profesional.</p>
+          <div class="cc-exp"><ul class="cc-bens"><li>Aprende el vocabulario más útil para tu trabajo</li><li>Mejora tu comunicación en situaciones operativas reales</li><li>Avanza con contenido claro, práctico y guiado</li></ul><div class="cc-btns"><button onclick="location.href='#cta-sec'" class="cbo">Asesor</button><button onclick="location.href='#cta-sec'" class="cbp">Inscribirme<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></div></div>
+        </div>
+      </div>
+      <div class="cc fi d3">
+        <div class="cc-img"><img src="tkt.jpeg" alt="Preparación TKT" loading="lazy"><div class="cc-ov"></div><div class="cc-ico" style="background:rgba(245,158,11,.22)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+        <div class="cc-body">
+          <h4 class="cc-title">Preparación TKT</h4>
+          <p class="cc-meta"><strong>Para quién:</strong> Docentes que buscan fortalecer su metodología y obtener certificación.</p>
+          <p class="cc-meta"><strong>Incluye:</strong> Metodología, conciencia lingüística y práctica enfocada en el examen.</p>
+          <div class="cc-exp"><ul class="cc-bens"><li>Refuerza tu conocimiento metodológico</li><li>Prepárate con estructura y enfoque claro</li><li>Avanza con práctica útil para la certificación</li></ul><div class="cc-btns"><button onclick="location.href='#cta-sec'" class="cbo">Asesor</button><button onclick="location.href='#cta-sec'" class="cbp">Inscribirme<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- S6: TESTIMONIALS -->
+<section id="testi">
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="th fi">
+      <div class="t-div"></div>
+      <div class="t-tag">Testimonios</div>
+      <h2 class="sh" style="font-size:clamp(32px,4vw,50px)">Lo que dicen nuestros estudiantes</h2>
+      <p class="sp" style="max-width:520px;margin:0 auto;text-align:center">Historias reales de personas que avanzaron con más claridad, confianza y estructura junto a VFluent.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tc fi">
+        <div class="tc-bq">"</div>
+        <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="t-txt">"En pocos meses pasé de evitar reuniones en inglés a participar con mucha más seguridad. Tener una ruta clara y clases enfocadas en lo que yo necesitaba marcó toda la diferencia."</p>
+        <div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">CR</div><div><div class="t-name">Camila R.</div><div class="t-role">Gerente de Proyectos · Colombia</div></div></div>
+      </div>
+      <div class="tc fi d1">
+        <div class="tc-bq">"</div>
+        <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="t-txt">"Después de intentar aprender por mi cuenta durante mucho tiempo, en VFluent por fin entendí qué me estaba frenando. El diagnóstico y la estructura del programa me ayudaron a avanzar con mucha más claridad."</p>
+        <div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)">DM</div><div><div class="t-name">Diego M.</div><div class="t-role">Ingeniero de Software · México</div></div></div>
+      </div>
+      <div class="tc fi d2">
+        <div class="tc-bq">"</div>
+        <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="t-txt">"No sentí que solo estaba tomando clases, sino siguiendo una ruta. Hoy me siento mucho más cómoda hablando en inglés y noto progreso real en mi fluidez día a día."</p>
+        <div class="t-auth"><div class="t-av" style="background:linear-gradient(135deg,#059669,#0d9488)">VS</div><div><div class="t-name">Valentina S.</div><div class="t-role">Directora de Marketing · Argentina</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- S7: CTA -->
+<section id="cta-sec">
+  <img class="cta-bg" src="cta.jpeg" alt="" aria-hidden="true">
+  <div class="cta-ov"></div><div class="cta-bf"></div>
+  <div class="wrap cta-inner">
+    <div class="cta-box fi">
+      <div class="cta-eye"><span class="cta-dot"></span>Lugares limitados</div>
+      <h2 class="cta-h">Comienza tu ruta<br>hacia la fluidez</h2>
+      <p class="cta-p">Haz el examen de ubicación de VFluent y recibe una ruta de aprendizaje personalizada en menos de 15 minutos.</p>
+      <div class="cta-btns">
+        <a href="#cta-sec" class="btn-cta" style="padding:15px 32px">
+          Tomar examen de ubicación
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <!-- FOOTER -->
 <footer>
-  <p>© VFluent</p>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <span class="fl">VFluent<span>.</span></span>
+        <p class="fd">Impulsamos a las personas a través del idioma. Creemos que hablar inglés con fluidez abre oportunidades reales.</p>
+        <div class="fsoc">
+          <a href="#" class="s-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+          <a href="#" class="s-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.76-6.98 6.276-.058 1.281-.072 1.688-.072 4.947s.014 3.666.072 4.947c.199 4.511 2.618 6.076 6.98 6.276 1.28.058 1.687.072 4.947.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.76 6.979-6.276.059-1.281.073-1.689.073-4.947 0-3.259-.014-3.667-.072-4.947-.196-4.516-2.617-6.076-6.979-6.276-1.28-.058-1.688-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" class="s-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fh">Navegación</h4>
+        <ul class="flinks"><li><a href="#hero">Inicio</a></li><li><a href="#courses">Programas</a></li><li><a href="#how">Metodología</a></li><li><a href="#testi">Testimonios</a></li><li><a href="#cta-sec">Contacto</a></li></ul>
+      </div>
+      <div>
+        <h4 class="fh">Programas</h4>
+        <ul class="flinks"><li><a href="#courses">Inglés General</a></li><li><a href="#courses">Business English</a></li><li><a href="#courses">Inglés para Transporte</a></li><li><a href="#courses">Preparación TKT</a></li></ul>
+      </div>
+    </div>
+    <div class="f-div"></div>
+    <div class="f-bot">
+      <p>© 2025 VFluent. Todos los derechos reservados.</p>
+      <div class="f-blinks"><a href="#">Aviso de privacidad</a><a href="#">Términos del servicio</a></div>
+    </div>
+  </div>
 </footer>
-
+ 
+<script>
+(function(){
+  const R=44,hW=R*Math.sqrt(3),g=document.getElementById('hexg');
+  if(!g)return;let s='';
+  for(let r=0;r<14;r++)for(let c=0;c<22;c++){
+    const cx=c*hW+(r%2?hW/2:0),cy=r*R*1.5;
+    const pts=Array.from({length:6},(_,i)=>{const a=Math.PI/180*(60*i-30);return`${(cx+R*Math.cos(a)).toFixed(1)},${(cy+R*Math.sin(a)).toFixed(1)}`}).join(' ');
+    s+=`<polygon points="${pts}" fill="url(#hg)" stroke="#07122a" stroke-width="1.2"/>`;
+  }
+  g.innerHTML=s;
+})();
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>28),{passive:true});
+const hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('o');mob.classList.toggle('o')});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('o');mob.classList.remove('o')}));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1,rootMargin:'0px 0px -48px 0px'});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}});
+});
+</script>
 </body>
 </html>
+ 

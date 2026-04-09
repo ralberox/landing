@@ -1,6 +1,3 @@
-TML
-Copiar
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,10 +27,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:rgba(0,212,245,.22);border-radius:3px}
- 
+
 /* ─ LAYOUT ─ */
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
- 
+
 /* ─ BUTTONS ─ */
 .btn-cta{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--cyan),#3B82F6);color:#020a14;padding:15px 30px;border-radius:999px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
 .btn-cta:hover{box-shadow:0 0 44px var(--cyan-soft);transform:scale(1.03) translateY(-1px)}
@@ -50,35 +47,37 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .btn-cta-lt:hover svg{transform:translateX(3px)}
 .btn-ghost-lt{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(14,28,54,.14);color:#475569;padding:13px 24px;border-radius:999px;font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.09em;transition:.32s var(--ease);background:rgba(255,255,255,.65)}
 .btn-ghost-lt:hover{border-color:rgba(0,168,197,.3);color:#007A9A}
- 
+
 /* ─ REVEAL ─ */
 .fi{opacity:0;transform:translateY(26px);transition:opacity .82s var(--ease),transform .82s var(--ease)}
 .fi.in{opacity:1;transform:none}
 .fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}.fi.d4{transition-delay:.4s}
- 
+
 /* ─ EYEBROW ─ */
 .brow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
 .brow-line{width:22px;height:1px;background:var(--cyan);opacity:.65}
 .brow-text{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);opacity:.82}
 .brow-center{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
- 
+
 /* ─ SECTION HEADINGS ─ */
 .sh{font-family:var(--serif);font-size:clamp(30px,3.8vw,46px);font-weight:600;line-height:1.13;color:#fff;margin-bottom:16px;letter-spacing:-.015em}
 .sh-dk{font-family:var(--serif);font-size:clamp(30px,3.8vw,46px);font-weight:600;line-height:1.13;color:#0E1C36;margin-bottom:16px;letter-spacing:-.015em}
 .sp{font-size:15px;color:rgba(255,255,255,.46);line-height:1.82;font-weight:300;max-width:420px}
 .sp-dk{font-size:15px;color:#64748b;line-height:1.82;font-weight:300}
- 
+
 /* ─ GRAIN OVERLAY ─ */
 .grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025}
 .grain::after{content:'';position:absolute;inset:-200%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px;animation:grain 8s steps(10) infinite}
 @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-5%)}30%{transform:translate(3%,-3%)}50%{transform:translate(-1%,4%)}70%{transform:translate(5%,1%)}90%{transform:translate(-3%,5%)}}
- 
+
 /* ══════ NAVBAR ══════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 0;transition:.38s var(--ease)}
 #nav.stuck{padding:13px 0;background:rgba(4,9,20,.94);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);box-shadow:0 6px 40px rgba(0,0,0,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;letter-spacing:.01em}
-.nav-logo span{color:var(--cyan)}
+.nav-logo{display:flex;align-items:center}
+.nav-logo img{height:36px;width:auto;display:block;filter:brightness(0) invert(1);transition:opacity .22s}
+.nav-logo img:hover{opacity:.85}
+#nav.stuck .nav-logo img{filter:brightness(0) invert(1)}
 .nav-links{display:flex;align-items:center;gap:36px}
 .nav-links a{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .22s}
 .nav-links a:hover{color:var(--cyan)}
@@ -92,19 +91,25 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .mob a{padding:13px 28px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.68);border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s}
 .mob a:hover{color:var(--cyan)}
 .mob-cta{padding:18px 28px 0}
- 
+
 /* ══════ S1 HERO — deep dark navy ══════ */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+#hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;
   background:linear-gradient(148deg,#060d1c 0%,#0c1a33 42%,#071224 72%,#02060e 100%)}
-.h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:.44;filter:contrast(1.1) saturate(.88)}
-.h-ov1{position:absolute;inset:0;background:linear-gradient(to right,#060d1c 0%,#060d1c 28%,rgba(6,13,28,.82) 44%,rgba(6,13,28,.06) 60%,transparent 72%)}
-.h-ov2{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,6,14,.72) 0%,transparent 24%)}
-.h-ov3{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,14,1) 0%,rgba(2,6,14,.5) 15%,transparent 33%)}
-.h-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 55% at 72% 48%,rgba(0,212,245,.048) 0%,transparent 65%)}
-.h-hc{position:absolute;inset:0;opacity:.09;pointer-events:none}
-.h-deco{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(0,212,245,.18) 35%,rgba(201,169,110,.14) 65%,transparent)}
- 
-.h-content{position:relative;z-index:10;padding:188px 0 148px;max-width:570px}
+/* photo lives in right column */
+.h-photo-col{position:relative;overflow:hidden}
+.h-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.82;filter:contrast(1.08) saturate(.92)}
+/* gradient blending left edge of photo into dark bg */
+.h-photo-col::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#060d1c 0%,rgba(6,13,28,.55) 35%,transparent 70%),linear-gradient(to top,rgba(2,6,14,.9) 0%,transparent 30%),linear-gradient(to bottom,rgba(2,6,14,.7) 0%,transparent 20%);pointer-events:none}
+.h-ov2{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,6,14,.65) 0%,transparent 22%);pointer-events:none}
+.h-ov3{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,rgba(2,6,14,1) 0%,rgba(2,6,14,.5) 50%,transparent 100%);pointer-events:none;z-index:5}
+.h-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 55% at 65% 48%,rgba(0,212,245,.04) 0%,transparent 65%)}
+.h-hc{position:absolute;inset:0;opacity:.1;pointer-events:none}
+.h-deco{position:absolute;bottom:0;left:0;right:0;height:1px;z-index:10;background:linear-gradient(to right,transparent,rgba(0,212,245,.18) 35%,rgba(201,169,110,.14) 65%,transparent)}
+
+/* left column — text */
+.h-left{position:relative;z-index:10;display:flex;align-items:center;padding:140px 0 120px 0;
+  background:linear-gradient(to right,#060d1c 0%,#060d1c 72%,rgba(6,13,28,.0) 100%)}
+.h-content{max-width:520px;padding-right:24px}
 .h-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:999px;border:1px solid rgba(201,169,110,.22);background:rgba(201,169,110,.06);font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,110,.88);margin-bottom:30px}
 .h-pulse{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
@@ -112,9 +117,10 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .h-h1 em{font-style:italic;color:var(--gold2)}
 .h-sub{font-size:16px;color:rgba(255,255,255,.46);line-height:1.78;font-weight:300;max-width:430px;margin-bottom:38px}
 .h-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
- 
-/* ══════ S2 PROBLEM — continuous dark (slight shift) ══════ */
-#problem{background:linear-gradient(to bottom,var(--ink) 0%,#070e1d 100%);padding:112px 0 96px}
+
+/* ══════ S2 PROBLEM — continuous dark + honeycomb ══════ */
+#problem{background:linear-gradient(to bottom,var(--ink) 0%,#070e1d 100%);padding:112px 0 96px;position:relative;overflow:hidden}
+.prob-hc{position:absolute;inset:0;opacity:.055;pointer-events:none}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .two-col.flip{direction:rtl}
 .two-col.flip>*{direction:ltr}
@@ -125,7 +131,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .frame-dk{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);box-shadow:0 28px 72px rgba(0,0,0,.55);position:relative}
 .frame-dk img,.frame-dk video{width:100%;height:380px;object-fit:cover}
 .frame-dk::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,28,.42) 0%,transparent 45%);pointer-events:none}
- 
+
 /* ══════ VALUE PILLARS — same dark ══════ */
 #pillars{background:linear-gradient(to bottom,#070e1d 0%,#0a1420 100%);padding:0 0 96px}
 .p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -136,7 +142,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .pil-ico{width:48px;height:48px;border-radius:13px;margin:0 auto 16px;background:linear-gradient(135deg,rgba(0,212,245,.1),rgba(59,130,246,.07));border:1px solid rgba(0,212,245,.13);display:flex;align-items:center;justify-content:center}
 .pil-ico svg{width:21px;height:21px;fill:none;stroke:var(--cyan);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .pil-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.72);line-height:1.45}
- 
+
 /* ══════ S3 HOW IT WORKS — LIGHT (the one intentional break) ══════ */
 #how{background:linear-gradient(to bottom,#EDF4F9 0%,#E6EFF6 55%,#ECF3F9 100%);padding:112px 0;position:relative;overflow:hidden}
 #how::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,168,197,.18) 50%,transparent 90%)}
@@ -153,7 +159,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .fbtns{display:flex;gap:12px;flex-wrap:wrap}
 .frame-lt{border-radius:18px;overflow:hidden;border:1px solid rgba(14,28,54,.07);box-shadow:0 8px 40px rgba(14,28,54,.09)}
 .frame-lt img,.frame-lt video{width:100%;height:340px;object-fit:cover;display:block}
- 
+
 /* ══════ S4 METHODOLOGY — back to deepest dark ══════ */
 #meth{background:linear-gradient(to bottom,#02060e 0%,#050b17 55%,#030710 100%);padding:112px 0;position:relative;overflow:hidden}
 #meth::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,212,245,.22) 50%,transparent 90%)}
@@ -183,7 +189,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .p3{border:1px solid rgba(248,113,113,.3);background:rgba(248,113,113,.08);color:#fca5a5}
 .p4{border:1px solid rgba(147,197,253,.3);background:rgba(147,197,253,.08);color:#93c5fd}
 .p5{border:1px solid rgba(196,181,253,.3);background:rgba(196,181,253,.08);color:#c4b5fd}
- 
+
 /* ══════ S5 COURSES — slightly lifted dark navy ══════ */
 #courses{background:linear-gradient(to bottom,#030710 0%,#08111e 55%,#05101a 100%);padding:112px 0;position:relative}
 #courses::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(255,255,255,.06) 50%,transparent 90%)}
@@ -212,7 +218,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .cbp:hover{box-shadow:0 0 22px rgba(0,212,245,.3)}
 .cbo{flex:1;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.68);padding:10px;border-radius:999px;font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;justify-content:center;transition:.26s var(--ease)}
 .cbo:hover{background:rgba(255,255,255,.07)}
- 
+
 /* ══════ S6 TESTIMONIALS — warmer deep blue ══════ */
 #testi{background:linear-gradient(to bottom,#0a1422 0%,#0d1c36 55%,#09142a 100%);padding:112px 0;position:relative;overflow:hidden}
 #testi::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 10%,rgba(0,212,245,.16) 50%,transparent 90%)}
@@ -231,26 +237,41 @@ button{font-family:var(--sans);cursor:pointer;border:none;background:none}
 .t-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff}
 .t-name{font-size:13px;font-weight:700;color:#fff}
 .t-role{font-size:11px;color:rgba(255,255,255,.38);margin-top:2px}
- 
-/* ══════ S7 CTA — near-black, premium ══════ */
-#cta-sec{padding:140px 0;position:relative;overflow:hidden;background:#020609}
-.cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.2;filter:saturate(.55)}
-.cta-ov{position:absolute;inset:0;background:linear-gradient(155deg,rgba(2,6,14,.95) 0%,rgba(4,10,22,.9) 40%,rgba(2,6,14,.93) 75%,rgba(1,4,10,.97) 100%)}
-.cta-bf{position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(to bottom,transparent,#020609);z-index:1;pointer-events:none}
-.cta-inner{position:relative;z-index:2;max-width:740px;margin:0 auto}
-.cta-box{border-radius:28px;border:1px solid rgba(201,169,110,.16);background:rgba(0,0,0,.38);backdrop-filter:blur(20px);padding:80px 64px;text-align:center;box-shadow:0 0 120px rgba(0,212,245,.04),inset 0 1px 0 rgba(255,255,255,.06);position:relative}
-.cta-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:55%;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.32),transparent)}
+
+/* ══════ S7 CTA — split layout, people clearly visible ══════ */
+#cta-sec{padding:0;position:relative;overflow:hidden;background:#02060e;min-height:600px;display:flex}
+.cta-split{display:grid;grid-template-columns:1fr 1fr;min-height:600px;width:100%}
+/* left — dark content panel */
+.cta-content-col{
+  background:linear-gradient(135deg,#030b1a 0%,#060e22 60%,#04091a 100%);
+  display:flex;align-items:center;padding:96px 64px 96px 80px;
+  position:relative;overflow:hidden;
+}
+.cta-content-col::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 0% 50%,rgba(0,212,245,.04) 0%,transparent 65%)}
+/* honeycomb subtle in cta */
+.cta-hc{position:absolute;inset:0;opacity:.06;pointer-events:none}
+.cta-content{position:relative;z-index:2;max-width:480px}
+/* right — photo panel */
+.cta-img-col{position:relative;overflow:hidden}
+.cta-img-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+/* subtle gradient to blend left edge */
+.cta-img-col::before{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to right,rgba(3,11,26,.55) 0%,transparent 35%)}
+.cta-img-col::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(2,6,14,.4) 0%,transparent 40%)}
+/* gold accent line between columns */
+.cta-col-line{position:absolute;top:10%;bottom:10%;left:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,169,110,.25),transparent);z-index:3}
+
 .cta-eye{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,110,.82);margin-bottom:18px}
 .cta-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
-.cta-h{font-family:var(--serif);font-size:clamp(32px,4.5vw,54px);font-weight:600;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.015em}
-.cta-p{font-size:16px;color:rgba(255,255,255,.5);max-width:450px;margin:0 auto 38px;line-height:1.78;font-weight:300}
-.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
- 
+.cta-h{font-family:var(--serif);font-size:clamp(32px,3.8vw,52px);font-weight:600;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.015em}
+.cta-p{font-size:15px;color:rgba(255,255,255,.5);max-width:420px;margin-bottom:36px;line-height:1.78;font-weight:300}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap}
+
 /* ══════ FOOTER ══════ */
-footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,255,.045)}
+footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,255,.045);position:relative;overflow:hidden}
+.footer-hc{position:absolute;inset:0;opacity:.05;pointer-events:none}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;margin-bottom:50px}
-.fl{font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;display:block;margin-bottom:13px}
-.fl span{color:var(--cyan)}
+.fl{display:block;margin-bottom:13px}
+.fl img{height:44px;width:auto;filter:brightness(0) invert(1);opacity:.88}
 .fd{font-size:13.5px;color:rgba(255,255,255,.38);line-height:1.78;font-weight:300;max-width:270px}
 .fh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--cyan);margin-bottom:20px;opacity:.75}
 .flinks{list-style:none;display:flex;flex-direction:column;gap:11px}
@@ -265,20 +286,25 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
 .f-bot a{color:rgba(255,255,255,.28);transition:color .2s}
 .f-bot a:hover{color:rgba(255,255,255,.55)}
 .f-blinks{display:flex;gap:20px}
- 
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   .nav-links,.nav-right{display:none}
   .hbg{display:flex}
+  #hero{grid-template-columns:1fr;min-height:100vh}
+  .h-photo-col{position:absolute;inset:0;z-index:0}
+  .h-left{position:relative;z-index:10;background:linear-gradient(to right,rgba(6,13,28,.95) 0%,rgba(6,13,28,.88) 60%,rgba(6,13,28,.7) 100%);padding:120px 0 80px}
+  .h-content{max-width:100%;padding-right:0}
   .two-col,.two-col.flip,.how-row,.how-row.flip,.cgrid{grid-template-columns:1fr;direction:ltr;gap:36px}
   .p-grid{grid-template-columns:repeat(2,1fr)}
   .mcards{grid-template-columns:1fr}
   .tgrid{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr}
   .cta-box{padding:48px 28px}
-  .h-content{padding:120px 0 80px;max-width:100%}
   .frame-dk img,.frame-dk video{height:260px}
   .frame-lt img,.frame-lt video{height:240px}
+  .cta-split{grid-template-columns:1fr}
+  .cta-img-col{height:320px}
 }
 @media(max-width:560px){
   .h-btns,.cta-btns,.fbtns{flex-direction:column}
@@ -288,12 +314,12 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
- 
+
 <!-- NAVBAR -->
 <header id="nav">
   <div class="wrap">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">VFluent<span>.</span></a>
+      <a href="#hero" class="nav-logo"><img src="vfluent_logo.png" alt="VFluent" height="36"></a>
       <nav class="nav-links">
         <a href="#hero">Inicio</a>
         <a href="#courses">Programas</a>
@@ -317,35 +343,49 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     <div class="mob-cta"><a href="#cta-sec" class="btn-cta" style="width:100%;justify-content:center">Tomar examen de ubicación</a></div>
   </div>
 </header>
- 
+
 <!-- S1: HERO -->
 <section id="hero">
-  <img class="h-photo" src="herowoman.jpeg" alt="" aria-hidden="true">
-  <div class="h-ov1"></div><div class="h-ov2"></div><div class="h-ov3"></div><div class="h-glow"></div>
-  <svg class="h-hc" viewBox="0 0 1600 950" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs><linearGradient id="hg" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
-    <g id="hexg"></g>
-  </svg>
-  <div class="wrap">
-    <div class="h-content">
-      <div class="h-badge fi"><span class="h-pulse"></span>Impulsado por docentes y tecnología</div>
-      <h1 class="h-h1 fi d1">Entiende tu inglés,<br><em>perfecciónalo</em><br>y habla con fluidez.</h1>
-      <p class="h-sub fi d2">Haz el examen de ubicación de VFluent y recibe tu ruta de aprendizaje personalizada en menos de 15 minutos.</p>
-      <div class="h-btns fi d3">
-        <a href="#cta-sec" class="btn-cta">
-          Tomar examen de ubicación
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-ghost">Hablar con un asesor</a>
+  <div class="h-ov2"></div><div class="h-ov3"></div><div class="h-glow"></div>
+
+  <!-- LEFT: text column -->
+  <div class="h-left">
+    <!-- honeycomb bg on left panel -->
+    <svg class="h-hc" viewBox="0 0 900 950" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><linearGradient id="hg" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
+      <g id="hexg"></g>
+    </svg>
+    <div class="wrap" style="width:100%;position:relative;z-index:2">
+      <div class="h-content">
+        <div class="h-badge fi"><span class="h-pulse"></span>Impulsado por docentes y tecnología</div>
+        <h1 class="h-h1 fi d1">Entiende tu inglés,<br><em>perfecciónalo</em><br>y habla con fluidez.</h1>
+        <p class="h-sub fi d2">Haz el examen de ubicación de VFluent y recibe tu ruta de aprendizaje personalizada en menos de 15 minutos.</p>
+        <div class="h-btns fi d3">
+          <a href="#cta-sec" class="btn-cta">
+            Tomar examen de ubicación
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-ghost">Hablar con un asesor</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- RIGHT: photo column -->
+  <div class="h-photo-col">
+    <img class="h-photo" src="herowoman.jpeg" alt="Estudiante de VFluent">
+  </div>
+
   <div class="h-deco"></div>
 </section>
- 
+
 <!-- S2: PROBLEM -->
 <section id="problem">
-  <div class="wrap">
+  <svg class="prob-hc" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="hg2" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
+    <g id="hexg2"></g>
+  </svg>
+  <div class="wrap" style="position:relative;z-index:2">
     <div class="two-col">
       <div class="fi">
         <div class="brow"><div class="brow-line"></div><span class="brow-text">El problema</span></div>
@@ -363,7 +403,7 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </section>
- 
+
 <!-- VALUE PILLARS -->
 <section id="pillars">
   <div class="wrap">
@@ -387,7 +427,7 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </section>
- 
+
 <!-- S3: HOW IT WORKS (light) -->
 <section id="how">
   <div class="wrap">
@@ -427,12 +467,14 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
             <a href="#cta-sec" class="btn-ghost-lt">Comenzar ahora</a>
           </div>
         </div>
-        <div class="frame-lt"><video autoplay muted loop playsinline><source src="dashboard .mp4" type="video/mp4"></video></div>
+        <div class="frame-lt"><video autoplay muted loop playsinline>
+          <source src="dashboard.mp4" type="video/mp4">
+        </video></div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- S4: METHODOLOGY -->
 <section id="meth">
   <div class="meth-glow"></div>
@@ -449,11 +491,15 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
         <div class="mc-body"><div class="mc-lbl c1">Grammar Flow™</div><p class="mc-p">Entiende la gramática como un sistema conectado, no como reglas aisladas.</p></div>
       </div>
       <div class="mc fi d1">
-        <video autoplay muted loop playsinline><source src="accoustic-phonetics .mp4" type="video/mp4"></video>
+        <video autoplay muted loop playsinline>
+          <source src="accoustic-phonetics.mp4" type="video/mp4">
+        </video>
         <div class="mc-body"><div class="mc-lbl c2">Acoustic Phonetics™</div><p class="mc-p">Entrena tu oído y mejora tu pronunciación para hablar con mayor claridad y seguridad.</p></div>
       </div>
       <div class="mc fi d2">
-        <video autoplay muted loop playsinline><source src="concept-mapping .mp4" type="video/mp4"></video>
+        <video autoplay muted loop playsinline>
+          <source src="concept-mapping.mp4" type="video/mp4">
+        </video>
         <div class="mc-body"><div class="mc-lbl c3">Concept Mapping™</div><p class="mc-p">Visualiza cómo se conecta el inglés para comprenderlo mejor y usarlo con más confianza.</p></div>
       </div>
     </div>
@@ -467,7 +513,7 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </section>
- 
+
 <!-- S5: COURSES -->
 <section id="courses">
   <div class="wrap">
@@ -516,7 +562,7 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </section>
- 
+
 <!-- S6: TESTIMONIALS -->
 <section id="testi">
   <div class="wrap" style="position:relative;z-index:2">
@@ -548,36 +594,50 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </section>
- 
-<!-- S7: CTA -->
+
+<!-- S7: CTA — split layout, people fully visible right panel -->
 <section id="cta-sec">
-  <img class="cta-bg" src="cta.jpeg" alt="" aria-hidden="true">
-  <div class="cta-ov"></div><div class="cta-bf"></div>
-  <div class="wrap cta-inner">
-    <div class="cta-box fi">
-      <div class="cta-eye"><span class="cta-dot"></span>Lugares limitados</div>
-      <h2 class="cta-h">Comienza tu ruta<br>hacia la fluidez</h2>
-      <p class="cta-p">Haz el examen de ubicación de VFluent y recibe una ruta de aprendizaje personalizada en menos de 15 minutos.</p>
-      <div class="cta-btns">
-        <a href="#cta-sec" class="btn-cta" style="padding:15px 32px">
-          Tomar examen de ubicación
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-wa">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          Hablar por WhatsApp
-        </a>
+  <div class="cta-split">
+    <!-- LEFT: dark content -->
+    <div class="cta-content-col">
+      <svg class="cta-hc" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><linearGradient id="hg-cta" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
+        <g id="hexg-cta"></g>
+      </svg>
+      <div class="cta-content fi">
+        <div class="cta-eye"><span class="cta-dot"></span>Lugares limitados</div>
+        <h2 class="cta-h">Comienza tu ruta<br>hacia la fluidez</h2>
+        <p class="cta-p">Haz el examen de ubicación de VFluent y recibe una ruta de aprendizaje personalizada en menos de 15 minutos.</p>
+        <div class="cta-btns">
+          <a href="#cta-sec" class="btn-cta">
+            Tomar examen de ubicación
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://wa.me/5218134144557" target="_blank" rel="noopener" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
       </div>
+    </div>
+    <!-- RIGHT: photo, people fully visible -->
+    <div class="cta-img-col">
+      <img src="cta.jpeg" alt="Estudiantes VFluent">
+      <div class="cta-col-line"></div>
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
-  <div class="wrap">
+  <svg class="footer-hc" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="hg-f" x1="0" y1="0" x2=".4" y2="1"><stop offset="0%" stop-color="#182c55"/><stop offset="100%" stop-color="#0b162c"/></linearGradient></defs>
+    <g id="hexg-f"></g>
+  </svg>
+  <div class="wrap" style="position:relative;z-index:2">
     <div class="fg">
       <div>
-        <span class="fl">VFluent<span>.</span></span>
+        <a href="#hero" class="fl"><img src="vfluent_logo.png" alt="VFluent" height="52"></a>
         <p class="fd">Impulsamos a las personas a través del idioma. Creemos que hablar inglés con fluidez abre oportunidades reales.</p>
         <div class="fsoc">
           <a href="#" class="s-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
@@ -601,18 +661,25 @@ footer{background:#01040a;padding:70px 0 34px;border-top:1px solid rgba(255,255,
     </div>
   </div>
 </footer>
- 
+
 <script>
-(function(){
-  const R=44,hW=R*Math.sqrt(3),g=document.getElementById('hexg');
-  if(!g)return;let s='';
-  for(let r=0;r<14;r++)for(let c=0;c<22;c++){
+function makeHex(containerId,gradId,rows,cols){
+  const g=document.getElementById(containerId);
+  if(!g)return;
+  const R=44,hW=R*Math.sqrt(3);
+  let s='';
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
     const cx=c*hW+(r%2?hW/2:0),cy=r*R*1.5;
     const pts=Array.from({length:6},(_,i)=>{const a=Math.PI/180*(60*i-30);return`${(cx+R*Math.cos(a)).toFixed(1)},${(cy+R*Math.sin(a)).toFixed(1)}`}).join(' ');
-    s+=`<polygon points="${pts}" fill="url(#hg)" stroke="#07122a" stroke-width="1.2"/>`;
+    s+=`<polygon points="${pts}" fill="url(#${gradId})" stroke="#07122a" stroke-width="1.2"/>`;
   }
   g.innerHTML=s;
-})();
+}
+makeHex('hexg','hg',14,12);
+makeHex('hexg2','hg2',10,18);
+makeHex('hexg-cta','hg-cta',12,10);
+makeHex('hexg-f','hg-f',8,18);
+
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>28),{passive:true});
 const hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
@@ -626,4 +693,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 </script>
 </body>
 </html>
- 
